@@ -1,6 +1,6 @@
 /* ── Features ────────────────────────────────────────────── */
 .features {
-  background-color: #1A3A24;
+  background-color: #2d2418;
 }
 
 .featureGrid {
@@ -14,7 +14,7 @@
   align-items: center;
   text-align: center;
   padding: 64px 48px;
-  border-right: 1px solid rgba(111, 207, 151, 0.2);
+  border-right: 1px solid rgba(255, 253, 253, 0.2);
 }
 
 .featureCard:last-child {
@@ -25,7 +25,7 @@
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  border: 2px solid rgba(111, 207, 151, 0.6);
+  border: 2px solid #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +35,7 @@
 
 .featureIcon {
   font-size: 1.6rem;
-  color: #6FCF97;
+  color: #FFFFFF;
 }
 
 .featureTitle {
@@ -49,7 +49,7 @@
 
 .featureDesc {
   font-size: 0.9rem;
-  color: rgba(245, 255, 246, 0.72);
+  color: rgba(255, 255, 255, 0.72);
   line-height: 1.8;
   flex: 1;
   margin-bottom: 28px;
@@ -61,8 +61,8 @@
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #6FCF97;
-  border-bottom: 1px solid rgba(111, 207, 151, 0.4);
+  color: #FFFFFF;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }

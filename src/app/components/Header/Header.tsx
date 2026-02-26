@@ -1,10 +1,12 @@
 "use client";
 
 import {
+  faCalendarDays,
+  faEnvelope,
   faHome,
   faImages,
   faInfoCircle,
-  faNewspaper,
+  faStar
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -14,10 +16,12 @@ import { useState } from "react";
 import styles from "./Header.module.css";
 
 const navLinks = [
-  { label: "Home",    href: "/",        icon: faHome },
-  { label: "About",   href: "/about",   icon: faInfoCircle },
-  { label: "Gallery", href: "/gallery", icon: faImages },
-  { label: "News",    href: "/news",    icon: faNewspaper },
+  { label: "Home",        href: "/",            icon: faHome },
+  { label: "About",       href: "/about",       icon: faInfoCircle },
+  { label: "Attractions", href: "/attractions", icon: faStar },
+  { label: "Schedule",    href: "/schedule",    icon: faCalendarDays },
+  { label: "Gallery",     href: "/gallery",     icon: faImages },
+  { label: "Contact",     href: "/contact",     icon: faEnvelope },
 ];
 
 export default function Header() {

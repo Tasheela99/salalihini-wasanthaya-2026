@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   z-index: var(--z-topbar);
-  background-color: var(--color-bg-topbar);
+  background-color: #272727;
   color: var(--color-text-on-dark);
   font-size: var(--fs-sm);
   height: 38px;
