@@ -1,0 +1,195 @@
+/* ── NewsSection ──────────────────────────────────────────── */
+.newsSection {
+  background-color: var(--color-bg-page);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--sp-8);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.colHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--sp-3);
+  margin-bottom: var(--sp-6);
+}
+
+.colTitle {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.colLink {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.colLink:hover {
+  color: var(--color-primary-light);
+}
+
+/* ── News Items ──────────────────────────────────────────── */
+.newsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.newsItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.newsImagePlaceholder {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  background-color: #C4C4C4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.newsDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 36px;
+}
+
+.newsDay {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.newsMonth {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.newsInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.newsTitle {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.newsTitle:hover {
+  color: var(--color-primary-light);
+}
+
+.newsMeta {
+  font-size: var(--fs-xs);
+  color: #999;
+}
+
+/* ── Campaign ────────────────────────────────────────────── */
+.campaignPlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: #C4C4C4;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: var(--fs-lg);
+  margin-bottom: var(--sp-4);
+}
+
+.campaignLink {
+  font-size: var(--fs-sm);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.campaignLink:hover {
+  color: var(--color-primary-light);
+}
+
+/* ── Testimonial ─────────────────────────────────────────── */
+.testimonial {
+  display: flex;
+  flex-direction: column;
+}
+
+.quoteIcon {
+  font-size: 3rem;
+  font-family: Georgia, serif;
+  color: var(--color-border-dark);
+  line-height: 1;
+  margin-bottom: var(--sp-2);
+}
+
+.quoteText {
+  font-size: var(--fs-sm);
+  font-style: italic;
+  color: #888;
+  line-height: 1.8;
+  margin-bottom: var(--sp-6);
+}
+
+.quoteAuthor {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.authorAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #C4C4C4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.4rem;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.authorInfo {
+  font-size: var(--fs-sm);
+  color: #666;
+}
+
+.authorName {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-12);
+  }
+}

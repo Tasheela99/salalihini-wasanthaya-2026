@@ -1,0 +1,21 @@
+/* ── SunAnimation ─────────────────────────────────────────── */
+.sunContainer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.sun {
+  position: absolute;
+  will-change: left, top, transform, opacity;
+  transition: none;
+}
+
+.sunImage {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px rgba(255, 200, 0, 0.5));
+}

@@ -1,0 +1,87 @@
+/* ── Features ────────────────────────────────────────────── */
+.features {
+  background-color: #1A3A24;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 64px 48px;
+  border-right: 1px solid rgba(111, 207, 151, 0.2);
+}
+
+.featureCard:last-child {
+  border-right: none;
+}
+
+.featureIconWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid rgba(111, 207, 151, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  flex-shrink: 0;
+}
+
+.featureIcon {
+  font-size: 1.6rem;
+  color: #6FCF97;
+}
+
+.featureTitle {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
+}
+
+.featureDesc {
+  font-size: 0.9rem;
+  color: rgba(245, 255, 246, 0.72);
+  line-height: 1.8;
+  flex: 1;
+  margin-bottom: 28px;
+}
+
+.featureLink {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6FCF97;
+  border-bottom: 1px solid rgba(111, 207, 151, 0.4);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.featureLink:hover {
+  color: #A7E9AF;
+  border-color: #A7E9AF;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+  .featureCard {
+    border-right: none;
+    border-bottom: 1px solid rgba(111, 207, 151, 0.2);
+  }
+  .featureCard:last-child {
+    border-bottom: none;
+  }
+}

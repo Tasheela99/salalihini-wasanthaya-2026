@@ -1,13 +1,89 @@
+/* ─────────────────────────────────────────────────────────────
+   globals.css – Salalihini Wasanthaya 2026
+   All values map to src/app/theme.ts — edit theme.ts to change
+   the look of the entire application.
+   ───────────────────────────────────────────────────────────── */
+
+/* ── CSS Custom Properties (mirrors theme.ts) ──────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colours */
+  --color-primary:          #2D5F3F;
+  --color-primary-light:    #3D8B52;
+  --color-primary-dark:     #1A3A24;
+
+  --color-secondary:        #A7E9AF;
+  --color-secondary-light:  #D0F5DF;
+  --color-secondary-dark:   #6FCF97;
+
+  --color-accent:           #F5FFF6;
+  --color-accent-dark:      #E2F5E8;
+
+  --color-white:            #FFFFFF;
+  --color-black:            #111111;
+
+  --color-bg-page:          #F8FFF9;
+  --color-bg-topbar:        #2D5F3F;
+  --color-bg-header:        #FFFFFF;
+  --color-bg-footer:        #1A3A24;
+
+  --color-text-primary:     #1A3A24;
+  --color-text-secondary:   #3D8B52;
+  --color-text-muted:       #6FCF97;
+  --color-text-on-dark:     #F5FFF6;
+  --color-text-on-primary:  #FFFFFF;
+
+  --color-border:           #D0F5DF;
+  --color-border-dark:      #A7E9AF;
+
+  /* Typography - Roboto font from Next.js font optimization */
+  --font-heading: var(--font-roboto), 'Roboto', Arial, Helvetica, sans-serif;
+  --font-body:    var(--font-roboto), 'Roboto', Arial, Helvetica, sans-serif;
+  --font-mono:    'Courier New', Courier, monospace;
+
+  /* Font sizes */
+  --fs-xs:   0.75rem;
+  --fs-sm:   0.875rem;
+  --fs-base: 1rem;
+  --fs-md:   1.125rem;
+  --fs-lg:   1.25rem;
+  --fs-xl:   1.5rem;
+  --fs-2xl:  1.875rem;
+  --fs-3xl:  2.25rem;
+  --fs-4xl:  3rem;
+
+  /* Spacing */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+  --sp-24: 6rem;
+
+  /* Radius */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-full: 9999px;
+
+  /* Z-index layers */
+  --z-topbar:  100;
+  --z-header:   90;
+  --z-dropdown: 80;
+  --z-modal:   200;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Reset & Base ──────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
@@ -17,17 +93,19 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text-primary);
+  line-height: 1.25;
 }
 
 a {
@@ -35,8 +113,41 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+a:hover {
+  color: var(--color-primary);
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Utility classes ───────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+}
+
+.section {
+  padding-block: var(--sp-16);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-3xl);
+  color: var(--color-secondary);
+  margin-bottom: var(--sp-4);
+}
+
+.section-subtitle {
+  font-size: var(--fs-md);
+  color: var(--color-text-muted);
+  margin-bottom: var(--sp-8);
+}
+
+/* ── Page wrapper offset for fixed topbar + header ─────────── */
+.page-content {
+  padding-top: calc(38px + 100px); /* topbar height + header height */
 }

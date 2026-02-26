@@ -1,0 +1,104 @@
+/* ── CallToAction ─────────────────────────────────────────── */
+.cta {
+  background-color: var(--color-primary-dark);
+  padding-block: var(--sp-16);
+}
+
+.ctaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-12);
+}
+
+.ctaCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.ctaTitle {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+}
+
+.ctaTitle.gold {
+  color: #E6A817;
+}
+
+.ctaTitle.green {
+  color: var(--color-secondary-dark);
+}
+
+.ctaSubtitle {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--color-text-on-dark);
+}
+
+.ctaDivider {
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin-top: var(--sp-2);
+  margin-bottom: var(--sp-4);
+}
+
+.divider_gold {
+  background-color: #E6A817;
+}
+
+.divider_green {
+  background-color: var(--color-secondary-dark);
+}
+
+.ctaDesc {
+  font-size: var(--fs-sm);
+  color: rgba(245, 255, 246, 0.72);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: var(--sp-6);
+}
+
+.ctaBtn {
+  display: inline-block;
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: var(--sp-3) var(--sp-8);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+  width: fit-content;
+}
+
+.btn_gold {
+  background-color: #E6A817;
+  color: var(--color-primary-dark);
+}
+
+.btn_gold:hover {
+  background-color: #d49b14;
+  color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn_green {
+  background-color: var(--color-secondary-dark);
+  color: var(--color-text-on-primary);
+}
+
+.btn_green:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ctaGrid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-10);
+  }
+}

@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600&family=Noto+Serif+Sinhala:wght@400;700;900&display=swap');
+
+:root {
+  --dark:         #0c0c12;
+  --accent:       #d4a843;
+  --accent-light: #f0c96a;
+  --white:        #f8f3ea;
+  --muted:        rgba(248, 243, 234, 0.65);
+}
+
+/* ─── Hero wrapper ─────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 580px;
+  overflow: hidden;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Slider ───────────────────────────────────────────────────── */
+.slider {
+  position: absolute;
+  inset: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.07);
+  transition: opacity 1.4s ease, transform 8s ease;
+  will-change: opacity, transform;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Gradient overlay — heavier at bottom for text legibility */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 12, 18, 0.25) 0%,
+    rgba(12, 12, 18, 0.55) 50%,
+    rgba(12, 12, 18, 0.82) 100%
+  );
+}
+
+/* ─── Center content ───────────────────────────────────────────── */
+.centerContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 780px;
+  width: 100%;
+}
+
+/* Badge pill */
+.badge {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--accent);
+  padding: 0.35rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.4rem;
+  animation: fadeDown 0.7s ease both;
+}
+
+/* Sinhala title */
+.titleSinhala {
+  font-family: 'Noto Serif Sinhala', serif;
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--white);
+  margin: 0 0 0.5rem;
+  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.1s;
+}
+
+/* English subtitle */
+.subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent-light);
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.04em;
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.2s;
+}
+
+/* Thin gold divider */
+.ruleLine {
+  width: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  margin: 0 auto 1.6rem;
+  animation: expandLine 0.8s ease both;
+  animation-delay: 0.35s;
+}
+
+/* Description */
+.desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 580px;
+  margin: 0 0 2.4rem;
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.45s;
+}
+
+/* ─── Buttons ──────────────────────────────────────────────────── */
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.6s;
+}
+
+.btnPrimary {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--dark);
+  background: var(--accent);
+  border: none;
+  padding: 0.85rem 2.4rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  display: inline-block;
+}
+
+.btnPrimary:hover {
+  background: var(--accent-light);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(212, 168, 67, 0.35);
+}
+
+.btnOutline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid rgba(212, 168, 67, 0.5);
+  padding: 0.85rem 2.4rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btnOutline:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  transform: translateY(-3px);
+}
+
+/* ─── Dot navigation ──────────────────────────────────────────── */
+.dots {
+  position: absolute;
+  bottom: 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(248, 243, 234, 0.3);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dot.activeDot {
+  background: var(--accent);
+  transform: scale(1.6);
+}
+
+/* ─── Progress bar ─────────────────────────────────────────────── */
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(248, 243, 234, 0.1);
+  z-index: 15;
+}
+
+.progressFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, var(--accent), var(--accent-light));
+  animation: fillBar linear both;
+}
+
+/* ─── Keyframes ───────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+
+@keyframes expandLine {
+  from { width: 0;    opacity: 0; }
+  to   { width: 72px; opacity: 1; }
+}
+
+@keyframes fillBar {
+  from { width: 0%;   }
+  to   { width: 100%; }
+}
+
+/* ─── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .ctaGroup {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titleSinhala {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+}

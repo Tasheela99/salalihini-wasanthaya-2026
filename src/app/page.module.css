@@ -1,20 +1,138 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
+/* ── Hero ────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 85vh;
   display: flex;
-  min-height: 100vh;
   align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary-dark) 0%,
+    var(--color-secondary) 50%,
+    var(--color-primary-dark) 100%
+  );
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  max-width: 720px;
+  padding-block: var(--sp-20);
+}
+
+.heroBadge {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: var(--sp-1) var(--sp-4);
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--color-text-on-dark);
+  line-height: 1.1;
+}
+
+.heroSubtitle {
+  font-size: var(--fs-xl);
+  color: var(--color-primary-light);
+  font-family: var(--font-heading);
+  font-style: italic;
+}
+
+.heroDesc {
+  font-size: var(--fs-md);
+  color: var(--color-accent);
+  max-width: 540px;
+  line-height: 1.75;
+}
+
+.heroCtas {
+  display: flex;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  margin-top: var(--sp-4);
+}
+
+/* Decorative circle */
+.heroDecor {
+  position: absolute;
+  right: -10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(111, 207, 151, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Shared Buttons ──────────────────────────────────────── */
+.btnPrimary {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  padding: var(--sp-3) var(--sp-8);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-primary);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+  display: inline-block;
+}
+
+.btnPrimary:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-on-primary);
+  transform: translateY(-2px);
+}
+
+.btnOutline {
+  background-color: transparent;
+  color: var(--color-text-on-dark);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  padding: var(--sp-3) var(--sp-8);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-text-on-dark);
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.15s;
+  display: inline-block;
+}
+
+.btnOutline:hover {
+  border-color: var(--color-primary-light);
+  color: var(--color-primary-light);
+  transform: translateY(-2px);
+}
+
+/* ── News Banner ─────────────────────────────────────────── */
+.newsBanner {
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary-dark) 0%,
+    var(--color-secondary) 100%
+  );
+  text-align: center;
+}
+
+.newsBannerTitle {
+  color: var(--color-text-on-dark) !important;
+}
+
+.newsBannerSub {
+  color: var(--color-accent-dark) !important;
 }
 
 .main {

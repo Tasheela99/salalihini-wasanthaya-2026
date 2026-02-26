@@ -1,0 +1,77 @@
+/* ── AboutMission ─────────────────────────────────────────── */
+.about {
+  background-color: var(--color-white);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-12);
+  align-items: center;
+}
+
+.imageCol {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 1280 / 852;
+  background-color: #C4C4C4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: var(--fs-3xl);
+  font-weight: 600;
+}
+
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-10);
+}
+
+.item {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+}
+
+.itemIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+.itemTitle {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+  margin-bottom: var(--sp-2);
+}
+
+.itemDesc {
+  font-size: var(--fs-sm);
+  color: #888;
+  line-height: 1.8;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+}
