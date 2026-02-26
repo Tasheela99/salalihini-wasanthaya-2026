@@ -16,7 +16,7 @@ import { useState } from "react";
 import styles from "./Header.module.css";
 
 const navLinks = [
-  { label: "Home",        href: "/",            icon: faHome },
+  { label: "Home",        href: "/",             icon: faHome },
   { label: "About",       href: "/about",       icon: faInfoCircle },
   { label: "Attractions", href: "/attractions", icon: faStar },
   { label: "Schedule",    href: "/schedule",    icon: faCalendarDays },
@@ -44,21 +44,13 @@ export default function Header() {
       <div className={styles.inner}>
         {/* Logo / Brand */}
         <Link href="/" className={styles.brand}>
-          <span className={styles.logoIcon}>
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 2C16 2 8 6 8 14C8 18 10 22 13 25C14 26 15 27 16 28C17 27 18 26 19 25C22 22 24 18 24 14C24 6 16 2 16 2Z" fill="#6FCF97"/>
-              <path d="M16 2L16 28" stroke="#4C5B47" strokeWidth="1.5" strokeLinecap="round"/>
-            </svg>
-          </span>
           <div className={styles.brandText}>
-            <span className={styles.brandTitle}>GREEN NATURE</span>
-            <span className={styles.brandSubtitle}>Environment Theme</span>
+            <span className={styles.brandTitle}>සැළලිහිණි  වසන්තය</span>
           </div>
         </Link>
 
-        {/* Right side: Navigation + Donate Button */}
+        {/* Right side: Navigation */}
         <div className={styles.rightSection}>
-          {/* Desktop Navigation */}
           <nav className={styles.nav} aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
@@ -73,11 +65,6 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-
-          {/* Donate Button */}
-          <Link href="/donate" className={styles.donateBtn}>
-            DONATE
-          </Link>
         </div>
 
         {/* Mobile hamburger */}

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600&family=Noto+Serif+Sinhala:wght@400;700;900&display=swap');
 .header {
   position: fixed;
   top: 38px;
@@ -73,25 +74,31 @@
 .brandText {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.1;
+  justify-content: center;
 }
 
 .brandTitle {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #FFFFFF;
+  /* Using your imported Sinhala Serif font */
+  font-family: 'Noto Serif Sinhala', serif;
+  font-size: 30px; 
+  font-weight: 900; 
+  color: #F9E596; /* Soft festive gold/champagne */
   letter-spacing: 0.5px;
+  /* A subtle text shadow makes the delicate serif pop against the dark green */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); 
 }
 
 .brandSubtitle {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.65);
-  letter-spacing: 0.3px;
-  font-weight: 400;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  /* Using Cormorant Garamond for a highly elegant, classic look */
+  font-family: 'Cormorant Garamond', serif; 
+  font-size: 14px;
+  color: #E2E8F0; /* Off-white for smooth contrast */
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 3px;
 }
-
 /* ── Right Section (Nav + Donate) ──────────────────────────── */
 .rightSection {
   display: flex;
