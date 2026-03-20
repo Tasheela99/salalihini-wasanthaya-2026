@@ -1,3 +1,18 @@
+import {
+  faFacebookF,
+  faInstagram,
+  faXTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faClock,
+  faEnvelope,
+  faLocationDot,
+  faMapLocationDot,
+  faPaperPlane,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { Metadata } from "next";
 import styles from "./contact.module.css";
 
@@ -9,7 +24,7 @@ export const metadata: Metadata = {
 
 const contactCards = [
   {
-    emoji: "📍",
+    icon: faLocationDot,
     title: "Visit Us",
     lines: [
       "Salalihini Wasanthaya Office",
@@ -18,42 +33,38 @@ const contactCards = [
     ],
   },
   {
-    emoji: "📞",
+    icon: faPhone,
     title: "Call Us",
     lines: ["+94 11 234 5678", "+94 77 123 4567"],
   },
   {
-    emoji: "✉️",
+    icon: faEnvelope,
     title: "Email Us",
     lines: ["info@salalihini.lk", "tickets@salalihini.lk"],
   },
   {
-    emoji: "🕐",
+    icon: faClock,
     title: "Office Hours",
-    lines: ["Mon – Fri: 9:00 AM – 5:00 PM", "Sat: 9:00 AM – 1:00 PM", "Sun: Closed"],
+    lines: [
+      "Mon – Fri: 9:00 AM – 5:00 PM",
+      "Sat: 9:00 AM – 1:00 PM",
+      "Sun: Closed",
+    ],
   },
 ];
 
 export default function ContactPage() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────── */}
-      <section className={styles.pageHero}>
-        <div className="container">
-          <h1 className={styles.pageTitle}>Contact Us</h1>
-          <p className={styles.pageSubtitle}>
-            We&apos;d love to hear from you
-          </p>
-        </div>
-      </section>
-
       {/* ── Contact Cards ────────────────────────────────── */}
       <section className="section">
         <div className="container">
           <div className={styles.cardGrid}>
             {contactCards.map((c) => (
               <div key={c.title} className={styles.card}>
-                <span className={styles.cardEmoji}>{c.emoji}</span>
+                <span className={styles.cardIconWrap}>
+                  <FontAwesomeIcon icon={c.icon} className={styles.cardIcon} />
+                </span>
                 <h3 className={styles.cardTitle}>{c.title}</h3>
                 {c.lines.map((line) => (
                   <p key={line} className={styles.cardLine}>
@@ -80,10 +91,34 @@ export default function ContactPage() {
               <div className={styles.socialLinks}>
                 <span className={styles.socialLabel}>Follow us</span>
                 <div className={styles.socialIcons}>
-                  <button type="button" aria-label="Facebook" className={styles.socialIcon}>📘</button>
-                  <button type="button" aria-label="Instagram" className={styles.socialIcon}>📸</button>
-                  <button type="button" aria-label="YouTube" className={styles.socialIcon}>▶️</button>
-                  <button type="button" aria-label="Twitter" className={styles.socialIcon}>🐦</button>
+                  <button
+                    type="button"
+                    aria-label="Facebook"
+                    className={styles.socialIcon}
+                  >
+                    <FontAwesomeIcon icon={faFacebookF} />
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Instagram"
+                    className={styles.socialIcon}
+                  >
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="YouTube"
+                    className={styles.socialIcon}
+                  >
+                    <FontAwesomeIcon icon={faYoutube} />
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Twitter / X"
+                    className={styles.socialIcon}
+                  >
+                    <FontAwesomeIcon icon={faXTwitter} />
+                  </button>
                 </div>
               </div>
             </div>
@@ -139,6 +174,7 @@ export default function ContactPage() {
                 />
               </div>
               <button type="submit" className={styles.submitBtn}>
+                <FontAwesomeIcon icon={faPaperPlane} />
                 Send Message
               </button>
             </form>
@@ -155,7 +191,8 @@ export default function ContactPage() {
             transport.
           </p>
           <div className={styles.mapPlaceholder}>
-            <span>🗺️ Map will be displayed here</span>
+            <FontAwesomeIcon icon={faMapLocationDot} />
+            <span>Map will be displayed here</span>
           </div>
         </div>
       </section>

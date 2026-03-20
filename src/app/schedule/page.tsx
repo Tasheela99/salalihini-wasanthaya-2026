@@ -81,16 +81,6 @@ const tagColors: Record<string, string> = {
 export default function SchedulePage() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────── */}
-      <section className={styles.pageHero}>
-        <div className="container">
-          <h1 className={styles.pageTitle}>Schedule</h1>
-          <p className={styles.pageSubtitle}>
-            Three days of unforgettable cultural experiences
-          </p>
-        </div>
-      </section>
-
       {/* ── Schedule Days ────────────────────────────────── */}
       <section className="section">
         <div className="container">

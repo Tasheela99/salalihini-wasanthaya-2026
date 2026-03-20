@@ -1,82 +1,110 @@
-/* ── Page Hero ───────────────────────────────────────────── */
-.pageHero {
-  background: linear-gradient(135deg, var(--color-secondary-dark) 0%, var(--color-secondary) 100%);
-  padding: var(--sp-20) 0 var(--sp-12);
+/* ── Gallery Header ─────────────────────────────────────── */
+.galleryHeader {
   text-align: center;
+  padding: 60px 24px 32px;
+  background: var(--color-white);
 }
 
-.pageTitle {
-  font-family: var(--font-heading);
-  font-size: var(--fs-4xl);
-  color: var(--color-text-on-dark);
-}
-
-.pageSubtitle {
-  font-size: var(--fs-lg);
+.sectionLabel {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--color-accent-dark);
-  margin-top: var(--sp-2);
+  margin-bottom: 12px;
 }
 
-/* ── Filter bar ──────────────────────────────────────────── */
-.filterBar {
-  display: flex;
-  gap: var(--sp-3);
-  flex-wrap: wrap;
-  margin-bottom: var(--sp-8);
+.sinhalaTitle {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-secondary-dark);
+  margin-bottom: 12px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.filterBtn {
-  background-color: var(--color-white);
+.headerSubtitle {
+  font-size: var(--fs-base);
   color: var(--color-text-secondary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  padding: var(--sp-2) var(--sp-6);
-  font-size: var(--fs-sm);
-  font-family: var(--font-body);
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  max-width: 560px;
+  margin: 0 auto;
 }
 
-.filterBtn:hover,
-.filterBtn.active {
-  background-color: var(--color-secondary);
-  color: var(--color-text-on-dark);
-  border-color: var(--color-secondary);
+/* ── Masonry Gallery Grid ────────────────────────────────── */
+.gallerySection {
+  padding: 40px 48px 60px;
+  background: var(--color-white);
 }
 
-/* ── Photo Grid ──────────────────────────────────────────── */
-.grid {
+.galleryGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--sp-4);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  grid-auto-rows: 10px;
+  gap: 0;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 .tile {
-  border-radius: var(--radius-md);
+  position: relative;
+  border-radius: 0;
   overflow: hidden;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-border);
-  transition: transform 0.25s, box-shadow 0.25s;
   cursor: pointer;
+  grid-column: span 4;
+  grid-row: span 36;
 }
 
-.tile:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+.tileTall {
+  grid-row: span 56;
 }
 
-.tileImg {
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-  display: flex;
+.tileWide {
+  grid-column: span 8;
+  grid-row: span 36;
+}
+
+.tileBig {
+  grid-column: span 8;
+  grid-row: span 72;
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.tile:hover .img {
+  transform: scale(1.05);
+}
+
+.downloadButton {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-secondary-dark);
+  color: var(--color-white);
+  opacity: 0.92;
+  text-decoration: none;
 }
 
-.tileEmoji {
-  font-size: 3rem;
+.downloadButton:hover {
+  opacity: 1;
 }
 
+.icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Legacy (kept for fallback) ──────────────────────────── */
 .tileCaption {
   padding: var(--sp-3) var(--sp-4);
   font-size: var(--fs-xs);
@@ -98,20 +126,38 @@
 }
 
 /* ── Responsive ──────────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 900px) {
+  .galleryGrid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .tile {
+    grid-column: span 3;
+    grid-row: span 34;
+  }
+
+  .tileWide,
+  .tileBig {
+    grid-column: span 6;
+  }
+
+  .gallerySection {
+    padding: 24px 20px 40px;
   }
 }
 
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 560px) {
+  .galleryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
 
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr;
+  .tile,
+  .tileWide,
+  .tileBig {
+    grid-column: span 2;
+  }
+
+  .sinhalaTitle {
+    font-size: 2rem;
   }
 }

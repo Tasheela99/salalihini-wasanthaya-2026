@@ -1,45 +1,64 @@
-import Link from "next/link";
+"use client";
+import { useEffect, useState } from "react";
 import styles from "./CallToAction.module.css";
 
-const ctas = [
-  {
-    title: "Support the Festival",
-    subtitle: "Your generosity brings art to life",
-    desc: "Salalihini Wasanthaya is powered by the love and support of our community. Every contribution helps us bring together the finest artists, musicians, and dancers to celebrate Sri Lankan culture on the grandest stage.",
-    btnLabel: "Donate Now",
-    href: "/about",
-    variant: "gold" as const,
-  },
-  {
-    title: "Volunteer With Us!",
-    subtitle: "Your time makes a difference",
-    desc: "Join the dedicated team behind Salalihini Wasanthaya 2026. From backstage coordination to welcoming guests, volunteers are the heartbeat of every unforgettable cultural moment we create together.",
-    btnLabel: "Join Now",
-    href: "/about",
-    variant: "green" as const,
-  },
-];
+const TARGET_DATE = new Date("April 13, 2026 00:00:00").getTime();
 
 export default function CallToAction() {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const countdownTimer = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = TARGET_DATE - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor(
+            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          ),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000),
+        });
+      } else {
+        clearInterval(countdownTimer);
+      }
+    }, 1000);
+    return () => clearInterval(countdownTimer);
+  }, []);
+
+  const units = [
+    { label: "Days", value: timeLeft.days },
+    { label: "Hours", value: timeLeft.hours },
+    { label: "Minutes", value: timeLeft.minutes },
+    { label: "Seconds", value: timeLeft.seconds },
+  ];
+
   return (
     <section className={styles.cta}>
-      <div className="container">
-        <div className={styles.ctaGrid}>
-          {ctas.map((item) => (
-            <div key={item.title} className={styles.ctaCard}>
-              <h3 className={`${styles.ctaTitle} ${styles[item.variant]}`}>
-                {item.title}
-              </h3>
-              <p className={styles.ctaSubtitle}>{item.subtitle}</p>
-              <span className={`${styles.ctaDivider} ${styles[`divider_${item.variant}`]}`} />
-              <p className={styles.ctaDesc}>{item.desc}</p>
-              <Link
-                href={item.href}
-                className={`${styles.ctaBtn} ${styles[`btn_${item.variant}`]}`}
-              >
-                {item.btnLabel}
-              </Link>
-            </div>
+      {/* ── Countdown ── */}
+      <div className={styles.countdownWrap}>
+        <div className={styles.countdownBig}>
+          {units.map((unit, i) => (
+            <>
+              <div key={unit.label} className={styles.countdownItem}>
+                <span className={styles.countdownValue}>
+                  {String(unit.value).padStart(2, "0")}
+                </span>
+                <span className={styles.countdownLabel}>{unit.label}</span>
+              </div>
+              {i < units.length - 1 && (
+                <span key={`sep-${i}`} className={styles.countdownSep}>
+                  :
+                </span>
+              )}
+            </>
           ))}
         </div>
       </div>

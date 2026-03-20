@@ -1,3 +1,114 @@
+/* ── Event Section Layout ─────────────────────────────── */
+.eventSection {
+  background: #f7f9fa;
+  padding: 64px 0 40px 0;
+}
+.eventContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.eventHeadingWrap {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.sectionLabel {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-accent-dark);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.sinhalaHeading {
+  font-family: 'Noto Serif Sinhala', serif;
+  font-size: 2.5rem;
+  color: var(--color-secondary);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+/* ── Festival Card Enhancements ───────────────────────── */
+.festivalIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.festivalTitleSinhala {
+  font-family: 'Noto Serif Sinhala', serif;
+  font-size: 1.15rem;
+  color: var(--color-secondary-dark);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.festivalSubtitle {
+  display: block;
+  font-size: 1rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* Adjust festival card for new layout */
+.festivalCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* ── Event & Festival Sections ────────────────────────── */
+.eventIntro {
+  font-size: var(--fs-lg);
+  color: var(--color-text-primary);
+  margin-bottom: var(--sp-8);
+  line-height: 1.7;
+}
+
+.festivalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-8);
+  margin-top: var(--sp-4);
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.festivalCard {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6) var(--sp-4);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: box-shadow 0.2s;
+}
+.festivalCard:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.festivalTitle {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--sp-2);
+}
+.festivalSubtitle {
+  display: block;
+  font-size: var(--fs-base);
+  color: var(--color-accent-dark);
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .festivalGrid {
+    grid-template-columns: 1fr;
+  }
+}
 /* ── Page Hero ───────────────────────────────────────────── */
 .pageHero {
   background: linear-gradient(135deg, var(--color-secondary-dark) 0%, var(--color-secondary) 100%);

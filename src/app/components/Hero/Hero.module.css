@@ -133,58 +133,51 @@
   animation-delay: 0.45s;
 }
 
-/* ─── Buttons ──────────────────────────────────────────────────── */
-.ctaGroup {
+/* ─── Countdown Timer ──────────────────────────────────────────── */
+.countdownContainer {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
   animation: fadeUp 0.8s ease both;
   animation-delay: 0.6s;
 }
 
-.btnPrimary {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--dark);
-  background: var(--accent);
-  border: none;
-  padding: 0.85rem 2.4rem;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  display: inline-block;
+.timeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(12, 12, 18, 0.6);
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  border-radius: 8px;
+  min-width: 80px;
+  padding: 1rem 0.5rem;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.btnPrimary:hover {
-  background: var(--accent-light);
+.timeBox:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(212, 168, 67, 0.35);
-}
-
-.btnOutline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--white);
-  background: transparent;
-  border: 1px solid rgba(212, 168, 67, 0.5);
-  padding: 0.85rem 2.4rem;
-  cursor: pointer;
-  transition: border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  display: inline-block;
-}
-
-.btnOutline:hover {
   border-color: var(--accent);
+}
+
+.timeValue {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.timeLabel {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   color: var(--accent-light);
-  transform: translateY(-3px);
 }
 
 /* ─── Dot navigation ──────────────────────────────────────────── */
@@ -256,9 +249,17 @@
 
 /* ─── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 600px) {
-  .ctaGroup {
-    flex-direction: column;
-    align-items: center;
+  .countdownContainer {
+    gap: 0.8rem;
+  }
+  
+  .timeBox {
+    min-width: 65px;
+    padding: 0.8rem 0.4rem;
+  }
+
+  .timeValue {
+    font-size: 1.5rem;
   }
 
   .titleSinhala {

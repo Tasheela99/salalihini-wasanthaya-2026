@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import AboutMission from "./components/AboutMission";
+import AttractionsPreview from "./components/AttractionsPreview";
 import CallToAction from "./components/CallToAction";
 import Features from "./components/Features";
+import GalleryPreview from "./components/GalleryPreview";
 import Hero from "./components/Hero";
 import ImageBanner from "./components/ImageBanner";
 import NewsSection from "./components/NewsSection";
-import Newsletter from "./components/Newsletter";
 import RecentProjects from "./components/RecentProjects";
 
 export const metadata: Metadata = {
@@ -20,7 +21,11 @@ export default function HomePage() {
       <Hero/>
       <Features />
 
+      <AttractionsPreview />
+
       <AboutMission />
+
+      <GalleryPreview />
 
       <CallToAction />
 
@@ -29,8 +34,6 @@ export default function HomePage() {
       <ImageBanner />
 
       <NewsSection />
-
-      <Newsletter />
     </>
   );
 }

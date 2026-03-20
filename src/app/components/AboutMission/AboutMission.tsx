@@ -25,11 +25,15 @@ export default function AboutMission() {
     <section className={`section ${styles.about}`}>
       <div className="container">
         <div className={styles.grid}>
-          <div className={styles.imageCol}>
-            <div className={styles.imagePlaceholder}>
-              <span>1280×852</span>
+            <div className={styles.imageCol}>
+            <img 
+              src="/images/10.jpeg" 
+              alt="About Mission" 
+              className={styles.image}
+              width={1280}
+              height={852}
+            />
             </div>
-          </div>
           <div className={styles.contentCol}>
             {missions.map((m) => (
               <div key={m.title} className={styles.item}>

@@ -1,4 +1,7 @@
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { Metadata } from "next";
+import Image from "next/image";
 import styles from "./gallery.module.css";
 
 export const metadata: Metadata = {
@@ -6,51 +9,60 @@ export const metadata: Metadata = {
   description: "Browse photos and videos from past Salalihini Wasanthaya events.",
 };
 
-const categories = ["All", "Performances", "Backstage", "Art", "Audience"];
+const images = Array.from({ length: 44 }, (_, index) => {
+  const number = String(index + 1).padStart(2, "0");
+  return {
+    id: number,
+    src: `/images/${number}.jpeg`,
+    alt: `Gallery image ${number}`,
+  };
+});
 
-const photos = Array.from({ length: 12 }, (_, i) => ({
-  id: i + 1,
-  label: `Photo ${i + 1}`,
-  category: categories[(i % (categories.length - 1)) + 1],
-  emoji: ["🎭", "🎶", "💃", "🎨", "🌸", "🥁", "🎤", "🖼️", "🌺", "🎵", "🎪", "🪁"][i],
-}));
+function getTileVariantClass(index: number) {
+  if (index % 11 === 0) return styles.tileBig;
+  if (index % 7 === 0) return styles.tileWide;
+  if (index % 5 === 0) return styles.tileTall;
+  return "";
+}
 
 export default function GalleryPage() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────── */}
-      <section className={styles.pageHero}>
-        <div className="container">
-          <h1 className={styles.pageTitle}>Gallery</h1>
-          <p className={styles.pageSubtitle}>Moments captured in time</p>
-        </div>
+      {/* ── Header ───────────────────────────────────────── */}
+      <section className={styles.galleryHeader}>
+        <div className={styles.sectionLabel}>GALLERY</div>
+        <h1 className={styles.sinhalaTitle}>ගැලරිය</h1>
+        <p className={styles.headerSubtitle}>
+          A glimpse into the beauty and joy of සැලළිහිනි වසන්තය.
+        </p>
       </section>
 
-      {/* ── Filter tabs ──────────────────────────────────── */}
-      <section className="section">
-        <div className="container">
-          <div className={styles.filterBar}>
-            {categories.map((c) => (
-              <button key={c} className={`${styles.filterBtn} ${c === "All" ? styles.active : ""}`}>
-                {c}
-              </button>
-            ))}
-          </div>
+      {/* ── Grid ─────────────────────────────────────────── */}
+      <section className={styles.gallerySection}>
+        <div className={styles.galleryGrid}>
+          {images.map((img, index) => (
+            <div
+              key={img.id}
+              className={`${styles.tile} ${getTileVariantClass(index)}`}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw"
+                className={styles.img}
+              />
 
-          {/* Photo grid */}
-          <div className={styles.grid}>
-            {photos.map((p) => (
-              <figure key={p.id} className={styles.tile}>
-                <div className={styles.tileImg} aria-label={p.label}>
-                  <span className={styles.tileEmoji}>{p.emoji}</span>
-                </div>
-                <figcaption className={styles.tileCaption}>
-                  <span className={styles.tileCategory}>{p.category}</span>
-                  {p.label}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+              <a
+                className={styles.downloadButton}
+                href={img.src}
+                download={`gallery-${img.id}.jpeg`}
+                aria-label={`Download image ${img.id}`}
+              >
+                <FontAwesomeIcon icon={faDownload} className={styles.icon} />
+              </a>
+            </div>
+          ))}
         </div>
       </section>
     </>
