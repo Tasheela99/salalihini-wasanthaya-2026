@@ -11,6 +11,8 @@
   position: absolute;
   will-change: left, top, transform, opacity;
   transition: none;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .sunImage {

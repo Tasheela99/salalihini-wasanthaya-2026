@@ -1,8 +1,3 @@
-/* ── Event Section Layout ─────────────────────────────── */
-.eventSection {
-  background: #f7f9fa;
-  padding: 64px 0 40px 0;
-}
 .eventContainer {
   max-width: 1300px;
   margin: 0 auto;

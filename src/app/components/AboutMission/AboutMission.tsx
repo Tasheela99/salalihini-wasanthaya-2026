@@ -1,5 +1,6 @@
 import { faLeaf, faSeedling, faTree } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SectionLabel from "../SectionLabel/SectionLabel";
 import styles from "./AboutMission.module.css";
 
 const missions = [
@@ -24,16 +25,17 @@ export default function AboutMission() {
   return (
     <section className={`section ${styles.about}`}>
       <div className="container">
+        <SectionLabel label="ABOUT MISSION"/>
         <div className={styles.grid}>
-            <div className={styles.imageCol}>
-            <img 
-              src="/images/10.jpeg" 
-              alt="About Mission" 
+          <div className={styles.imageCol}>
+            <img
+              src="/images/10.jpeg"
+              alt="About Mission"
               className={styles.image}
               width={1280}
               height={852}
             />
-            </div>
+          </div>
           <div className={styles.contentCol}>
             {missions.map((m) => (
               <div key={m.title} className={styles.item}>

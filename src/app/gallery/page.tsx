@@ -2,11 +2,13 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { Metadata } from "next";
 import Image from "next/image";
+import SectionLabel from "../components/SectionLabel/SectionLabel";
 import styles from "./gallery.module.css";
 
 export const metadata: Metadata = {
   title: "Gallery | Salalihini Wasanthaya 2026",
-  description: "Browse photos and videos from past Salalihini Wasanthaya events.",
+  description:
+    "Browse photos and videos from past Salalihini Wasanthaya events.",
 };
 
 const images = Array.from({ length: 44 }, (_, index) => {
@@ -28,43 +30,37 @@ function getTileVariantClass(index: number) {
 export default function GalleryPage() {
   return (
     <>
-      {/* ── Header ───────────────────────────────────────── */}
-      <section className={styles.galleryHeader}>
-        <div className={styles.sectionLabel}>GALLERY</div>
-        <h1 className={styles.sinhalaTitle}>ගැලරිය</h1>
-        <p className={styles.headerSubtitle}>
-          A glimpse into the beauty and joy of සැලළිහිනි වසන්තය.
-        </p>
-      </section>
-
       {/* ── Grid ─────────────────────────────────────────── */}
-      <section className={styles.gallerySection}>
-        <div className={styles.galleryGrid}>
-          {images.map((img, index) => (
-            <div
-              key={img.id}
-              className={`${styles.tile} ${getTileVariantClass(index)}`}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw"
-                className={styles.img}
-              />
-
-              <a
-                className={styles.downloadButton}
-                href={img.src}
-                download={`gallery-${img.id}.jpeg`}
-                aria-label={`Download image ${img.id}`}
+      <div className="container" style={{ paddingTop: "3rem" }}>
+        <section className="pt-5">
+          <SectionLabel label="GALLERY" />
+          <div className={styles.galleryGrid}>
+            {images.map((img, index) => (
+              <div
+                key={img.id}
+                className={`${styles.tile} ${getTileVariantClass(index)}`}
               >
-                <FontAwesomeIcon icon={faDownload} className={styles.icon} />
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw"
+                  className={styles.img}
+                />
+
+                <a
+                  className={styles.downloadButton}
+                  href={img.src}
+                  download={`gallery-${img.id}.jpeg`}
+                  aria-label={`Download image ${img.id}`}
+                >
+                  <FontAwesomeIcon icon={faDownload} className={styles.icon} />
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </>
   );
 }

@@ -5,6 +5,7 @@ import styles from "./SunAnimation.module.css";
 
 export default function SunAnimation() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
   const rafRef = useRef<number>(0);
 
   useEffect(() => {
@@ -59,10 +60,15 @@ export default function SunAnimation() {
         ? (1 - t) / 0.08
         : 1;
 
+  if (!isVisible) {
+    return null;
+  }
+
   return (
     <div className={styles.sunContainer} aria-hidden="true">
       <div
         className={styles.sun}
+        onClick={() => setIsVisible(false)}
         style={{
           left: `${xPercent}%`,
           top: `${yPercent}vh`,

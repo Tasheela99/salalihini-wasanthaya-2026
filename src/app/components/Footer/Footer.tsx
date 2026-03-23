@@ -1,22 +1,25 @@
 import {
-    faFacebook,
-    faInstagram,
-    faYoutube,
+  faFacebook,
+  faInstagram,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import {
-    faEnvelope,
-    faLocationDot,
-    faPhone,
+  faEnvelope,
+  faLocationDot,
+  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 
+// Keep footer navigation in sync with header navigation
 const quickLinks = [
-  { label: "Home",    href: "/" },
-  { label: "About",   href: "/about" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "News",    href: "/news" },
+  { label: "Home",        href: "/" },
+  { label: "About",       href: "/about" },
+  { label: "Attractions", href: "/attractions" },
+  { label: "Schedule",    href: "/schedule" },
+  { label: "Gallery",     href: "/gallery" },
+  { label: "Contact",     href: "/contact" },
 ];
 
 export default function Footer() {

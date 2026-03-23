@@ -208,7 +208,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background-color: var(--color-text-primary);
+  background-color: #ffffff;
   border-radius: var(--radius-full);
   transition: transform 0.25s, opacity 0.25s;
 }
@@ -238,12 +238,53 @@
   color: var(--color-primary-dark);
 }
 
+/* ── Mobile Icon Bar (below header) ───────────────────────── */
+.mobileIconNav {
+  display: flex;
+  width: 100%;
+  background-color: #1b261c;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobileIconLink {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.mobileIconLink.active {
+  color: #6FCF97;
+}
+
 @media (max-width: 768px) {
+  /* Hide desktop nav in header on mobile */
   .nav {
     display: none;
   }
+
+  /* Show hamburger and let it toggle icon bar */
   .hamburger {
     display: flex;
+  }
+
+  .mobileIconLink {
+    font-size: 20px;
+  }
+
+  .brandTitle {
+    font-size: 22px;
+  }
+}
+
+/* When the Topbar is hidden on very small screens, pull
+   the header up so there is no empty gap above it. */
+@media (max-width: 640px) {
+  .header {
+    top: 0;
   }
 }
 

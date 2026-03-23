@@ -90,6 +90,7 @@
 
   .countdownBig {
     gap: var(--sp-3);
+    flex-wrap: nowrap; /* keep all units on one row on mobile */
   }
 }
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SectionLabel from "../components/SectionLabel/SectionLabel";
 import styles from "./attractions.module.css";
 
 export const metadata: Metadata = {
@@ -10,7 +11,8 @@ export const metadata: Metadata = {
 const attractions = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
     icon: "\uD83D\uDDBC\uFE0F",
     title: "Scenic Nature",
     sinhala: "සොබාදහම",
@@ -20,7 +22,8 @@ const attractions = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
     icon: "\uD83D\uDC83",
     title: "Cultural Performances",
     sinhala: "සාම්ප්‍රදායික ප්‍රදර්ශන",
@@ -30,7 +33,8 @@ const attractions = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
     icon: "\uD83C\uDF72",
     title: "Sri Lankan Cuisine",
     sinhala: "ශ්‍රී ලංකා ආහාරය",
@@ -52,17 +56,9 @@ const categoryColors: Record<string, string> = {
 export default function AttractionsPage() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────── */}
-
-      <section className={styles.pageHero}>
-        <div className="container">
-          <div className={styles.heroLabel}>ATTRACTIONS & EXPERIENCES</div>
-          <h1 className={styles.heroTitle}>ආකර්ෂණ හා අත්දැකීම්</h1>
-        </div>
-      </section>
-
       <section className="section">
         <div className="container">
+          <SectionLabel label="ATTRACTIONS" />
           <div className={styles.cardGrid}>
             {attractions.map((a) => (
               <div key={a.id} className={styles.attractionCard}>

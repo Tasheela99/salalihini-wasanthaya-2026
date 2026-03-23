@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
+import SectionLabel from "../SectionLabel/SectionLabel";
 import styles from "./CallToAction.module.css";
 
 const TARGET_DATE = new Date("April 13, 2026 00:00:00").getTime();
@@ -21,7 +22,7 @@ export default function CallToAction() {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor(
-            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
           ),
           minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((difference % (1000 * 60)) / 1000),
@@ -41,27 +42,30 @@ export default function CallToAction() {
   ];
 
   return (
-    <section className={styles.cta}>
-      {/* ── Countdown ── */}
-      <div className={styles.countdownWrap}>
-        <div className={styles.countdownBig}>
-          {units.map((unit, i) => (
-            <>
-              <div key={unit.label} className={styles.countdownItem}>
-                <span className={styles.countdownValue}>
-                  {String(unit.value).padStart(2, "0")}
-                </span>
-                <span className={styles.countdownLabel}>{unit.label}</span>
-              </div>
-              {i < units.length - 1 && (
-                <span key={`sep-${i}`} className={styles.countdownSep}>
-                  :
-                </span>
-              )}
-            </>
-          ))}
+    <>
+    <div className="container">
+      <SectionLabel label="DAYS" />
+    </div>
+      
+      <section className={styles.cta}>
+        <div className={styles.countdownWrap}>
+          <div className={styles.countdownBig}>
+            {units.map((unit, i) => (
+              <Fragment key={unit.label}>
+                <div className={styles.countdownItem}>
+                  <span className={styles.countdownValue}>
+                    {String(unit.value).padStart(2, "0")}
+                  </span>
+                  <span className={styles.countdownLabel}>{unit.label}</span>
+                </div>
+                {i < units.length - 1 && (
+                  <span className={styles.countdownSep}>:</span>
+                )}
+              </Fragment>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

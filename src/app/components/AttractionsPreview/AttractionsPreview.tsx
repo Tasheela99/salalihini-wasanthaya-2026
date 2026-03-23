@@ -1,11 +1,11 @@
 import Link from "next/link";
+import SectionLabel from "../SectionLabel/SectionLabel";
 import styles from "./AttractionsPreview.module.css";
 
 const attractions = [
   {
     id: 1,
-    image:
-      "/images/28.jpeg",
+    image: "/images/28.jpeg",
     title: "Scenic Nature",
     sinhala: "සොබාදහම",
     description:
@@ -13,8 +13,7 @@ const attractions = [
   },
   {
     id: 2,
-    image:
-      "/images/34.jpeg",
+    image: "/images/34.jpeg",
     title: "Cultural Performances",
     sinhala: "සාම්ප්‍රදායික ප්‍රදර්ශන",
     description:
@@ -22,8 +21,7 @@ const attractions = [
   },
   {
     id: 3,
-    image:
-      "/images/37.jpeg",
+    image: "/images/37.jpeg",
     title: "Sri Lankan Cuisine",
     sinhala: "ශ්‍රී ලංකා ආහාරය",
     description:
@@ -35,10 +33,7 @@ export default function AttractionsPreview() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <div className={styles.headingWrap}>
-          <div className={styles.sectionLabel}>ATTRACTIONS & EXPERIENCES</div>
-          <h2 className={styles.sinhalaHeading}>ආකර්ෂණ හා අත්දැකීම්</h2>
-        </div>
+        <SectionLabel label="ATTRACTIONS" />
 
         <div className={styles.cardGrid}>
           {attractions.map((a) => (

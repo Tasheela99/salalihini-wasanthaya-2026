@@ -74,23 +74,23 @@ export default function Header() {
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
         >
-          <span className={`${styles.bar} ${menuOpen ? styles.barOpen : ""}`} />
-          <span className={`${styles.bar} ${menuOpen ? styles.barOpen : ""}`} />
-          <span className={`${styles.bar} ${menuOpen ? styles.barOpen : ""}`} />
+          <span className={styles.bar} />
+          <span className={styles.bar} />
+          <span className={styles.bar} />
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile icon bar – toggled by hamburger on small screens */}
       {menuOpen && (
-        <nav className={styles.mobileMenu} aria-label="Mobile navigation">
+        <nav className={styles.mobileIconNav} aria-label="Mobile quick navigation">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`${styles.mobileLink} ${pathname === link.href ? styles.active : ""}`}
+              className={`${styles.mobileIconLink} ${pathname === link.href ? styles.active : ""}`}
               onClick={() => setMenuOpen(false)}
             >
-              {link.label}
+              <FontAwesomeIcon icon={link.icon} />
             </Link>
           ))}
         </nav>

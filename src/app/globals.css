@@ -9,6 +9,15 @@
   /* Colours */
   --color-primary:          #2D5F3F;
   --color-primary-light:    #3D8B52;
+
+/* On small screens the Topbar is hidden and the Header is
+   pinned to the very top, so only offset by the header
+   height to avoid an extra white band. */
+@media (max-width: 640px) {
+  .page-content {
+    padding-top: 100px; /* header height only */
+  }
+}
   --color-primary-dark:     #1A3A24;
 
   --color-secondary:        #A7E9AF;

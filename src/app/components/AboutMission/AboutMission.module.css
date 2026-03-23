@@ -2,6 +2,26 @@
 .about {
   background-color: var(--color-white);
 }
+.headingWrap {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sectionLabel {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent-dark);
+  margin-bottom: 10px;
+}
+
+.sinhalaHeading {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  color: var(--color-secondary-dark);
+  font-weight: 700;
+}
 
 .grid {
   display: grid;

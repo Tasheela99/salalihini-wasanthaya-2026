@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { Metadata } from "next";
+import SectionLabel from "../components/SectionLabel/SectionLabel";
 import styles from "./contact.module.css";
 
 export const metadata: Metadata = {
@@ -59,6 +60,7 @@ export default function ContactPage() {
       {/* ── Contact Cards ────────────────────────────────── */}
       <section className="section">
         <div className="container">
+          <SectionLabel label="CONTACTS" />
           <div className={styles.cardGrid}>
             {contactCards.map((c) => (
               <div key={c.title} className={styles.card}>

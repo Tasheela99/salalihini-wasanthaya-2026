@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SectionLabel from "../components/SectionLabel/SectionLabel";
 import styles from "./schedule.module.css";
 
 export const metadata: Metadata = {
@@ -84,6 +85,7 @@ export default function SchedulePage() {
       {/* ── Schedule Days ────────────────────────────────── */}
       <section className="section">
         <div className="container">
+           <SectionLabel label="SCHEDULE" />
           {schedule.map((day) => (
             <div key={day.day} className={styles.dayBlock}>
               <div className={styles.dayHeader}>
