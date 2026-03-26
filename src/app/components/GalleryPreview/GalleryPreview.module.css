@@ -108,10 +108,4 @@
     font-size: 1.3rem;
   }
 
-  /* Add some side padding on mobile so
-     tiles don’t touch the screen edge */
-  .galleryPreviewSection {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
 }

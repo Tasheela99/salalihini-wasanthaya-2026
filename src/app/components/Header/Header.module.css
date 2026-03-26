@@ -5,23 +5,15 @@
   left: 0;
   width: 100%;
   z-index: var(--z-header);
-  background-color: var(--color-bg-footer);
   background-color: var(--color-glass-dark);
-  background-image: linear-gradient(
-    180deg,
-    var(--color-glass-highlight) 0%,
-    rgba(255, 249, 239, 0.00) 55%
-  );
-  backdrop-filter: blur(14px) saturate(1.2);
-  -webkit-backdrop-filter: blur(14px) saturate(1.2);
   border-bottom: 1px solid var(--color-glass-border);
   color: var(--color-text-on-dark);
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-size: 13px;
-  box-shadow:
-    0 10px 28px rgba(0, 0, 0, 0.18),
-    inset 0 1px 0 rgba(255, 249, 239, 0.10);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
   overflow: hidden;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
 }
 
 /* ── Flying Bird Animation ─────────────────────────────────── */
@@ -32,7 +24,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 .flyingBird {
@@ -55,13 +47,14 @@
 }
 
 .inner {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
+  width: 100%;
+  padding: 0;
 }
 
 /* ── Brand ─────────────────────────────────────────────────── */
@@ -104,7 +97,7 @@
   /* Using Cormorant Garamond for a highly elegant, classic look */
   font-family: 'Cormorant Garamond', serif; 
   font-size: 14px;
-  color: var(--color-text-on-dark);
+  color: rgba(255, 249, 239, 0.86);
   letter-spacing: 1.5px;
   font-weight: 600;
   text-transform: uppercase;
@@ -132,14 +125,14 @@
   gap: 6px;
   font-size: 13px;
   font-weight: 500;
-  color: var(--color-text-on-dark);
+  color: rgba(255, 249, 239, 0.92);
   text-transform: uppercase;
   letter-spacing: 0.8px;
   position: relative;
   padding: 0 4px;
   height: 100px;
   transition: color 0.2s;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
 }
 
 .navLink::after {
@@ -179,9 +172,9 @@
 
 /* ── Donate Button ─────────────────────────────────────────── */
 .donateBtn {
-  background-color: var(--color-accent-red);
+  background-color: #ecb338;
   height: 100px;
-  color: var(--color-text-on-dark);
+  color: #1A3A24;
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
@@ -199,8 +192,8 @@
 }
 
 .donateBtn:hover {
-  background-color: var(--color-primary);
-  color: var(--color-text-on-primary);
+  background-color: #ffd966;
+  color: #1A3A24;
 }
 
 /* ── Hamburger ─────────────────────────────────────────────── */
@@ -253,8 +246,15 @@
 .mobileIconNav {
   display: flex;
   width: 100%;
-  background-color: var(--color-bg-footer);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--color-glass-dark);
+  border-top: 1px solid var(--color-glass-border);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+}
+
+.mobileIconInner {
+  display: flex;
+  width: 100%;
 }
 
 .mobileIconLink {
@@ -263,7 +263,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px 0;
-  color: var(--color-text-on-dark);
+  color: rgba(255, 249, 239, 0.92);
   font-size: 18px;
 }
 

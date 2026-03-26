@@ -55,11 +55,12 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     description:
       "Breathtaking cliff edge with panoramic views. Best visited early morning before mist rolls in.",
     mustVisit: true,
+    imageSrc: "/images/01.jpeg",
     destinationQuery: "Horton Plains National Park",
     chips: [
-      { icon: "🛣️", text: "32 km", tone: "green" },
-      { icon: "🕒", text: "~1 hr", tone: "blue" },
-      { icon: "🥾", text: "3–4 hrs", tone: "pink" },
+      { icon: "road", text: "32 km", tone: "green" },
+      { icon: "clock", text: "~1 hr", tone: "blue" },
+      { icon: "hike", text: "3–4 hrs", tone: "pink" },
     ],
   },
   {
@@ -68,11 +69,12 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     sinhala: "ග්‍රෙගරි වැව",
     description:
       "Scenic lake in the heart of the city. Enjoy boating, pony rides, and lakeside walks.",
+    imageSrc: "/images/02.jpeg",
     destinationQuery: "Gregory Lake, Nuwara Eliya",
     chips: [
-      { icon: "🛣️", text: "1.5 km", tone: "green" },
-      { icon: "🕒", text: "~5 min", tone: "blue" },
-      { icon: "🚶", text: "1–2 hrs", tone: "pink" },
+      { icon: "road", text: "1.5 km", tone: "green" },
+      { icon: "clock", text: "~5 min", tone: "blue" },
+      { icon: "walk", text: "1–2 hrs", tone: "pink" },
     ],
   },
   {
@@ -81,11 +83,12 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     sinhala: "හක්ගල උද්‍යානය",
     description:
       "One of Sri Lanka’s finest botanical gardens, famous for roses and orchids.",
+    imageSrc: "/images/03.jpeg",
     destinationQuery: "Hakgala Botanical Garden",
     chips: [
-      { icon: "🛣️", text: "10 km", tone: "green" },
-      { icon: "🕒", text: "~20 min", tone: "blue" },
-      { icon: "📸", text: "2–3 hrs", tone: "pink" },
+      { icon: "road", text: "10 km", tone: "green" },
+      { icon: "clock", text: "~20 min", tone: "blue" },
+      { icon: "camera", text: "2–3 hrs", tone: "pink" },
     ],
   },
   {
@@ -94,11 +97,12 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     sinhala: "සීතා අම්මාන් කෝවිල",
     description:
       "Ancient Hindu temple linked to the Ramayana epic, set in a scenic gorge.",
+    imageSrc: "/images/04.jpeg",
     destinationQuery: "Seetha Amman Temple",
     chips: [
-      { icon: "🛣️", text: "12 km", tone: "green" },
-      { icon: "🕒", text: "~25 min", tone: "blue" },
-      { icon: "🛕", text: "1 hr", tone: "pink" },
+      { icon: "road", text: "12 km", tone: "green" },
+      { icon: "clock", text: "~25 min", tone: "blue" },
+      { icon: "landmark", text: "1 hr", tone: "pink" },
     ],
   },
   {
@@ -107,11 +111,12 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     sinhala: "ලවර්ස් ලීප්",
     description:
       "A stunning 30m waterfall surrounded by tea plantations and misty hills.",
+    imageSrc: "/images/05.jpeg",
     destinationQuery: "Lover's Leap Waterfall, Nuwara Eliya",
     chips: [
-      { icon: "🛣️", text: "5 km", tone: "green" },
-      { icon: "🕒", text: "~15 min", tone: "blue" },
-      { icon: "🚶", text: "1–2 hrs", tone: "pink" },
+      { icon: "road", text: "5 km", tone: "green" },
+      { icon: "clock", text: "~15 min", tone: "blue" },
+      { icon: "walk", text: "1–2 hrs", tone: "pink" },
     ],
   },
   {
@@ -120,11 +125,12 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     sinhala: "පෙඩ්රෝ තේ වත්ත",
     description:
       "Tour a working tea factory, taste fresh Ceylon tea, and enjoy stunning estate views.",
+    imageSrc: "/images/06.jpeg",
     destinationQuery: "Pedro Tea Estate",
     chips: [
-      { icon: "🛣️", text: "3.5 km", tone: "green" },
-      { icon: "🕒", text: "~10 min", tone: "blue" },
-      { icon: "🍵", text: "1–2 hrs", tone: "pink" },
+      { icon: "road", text: "3.5 km", tone: "green" },
+      { icon: "clock", text: "~10 min", tone: "blue" },
+      { icon: "tea", text: "1–2 hrs", tone: "pink" },
     ],
   },
   {
@@ -134,11 +140,12 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     description:
       "Sri Lanka’s highest peak at 2,524m. Views accessible from the approach road.",
     mustVisit: true,
+    imageSrc: "/images/07.jpeg",
     destinationQuery: "Pidurutalagala",
     chips: [
-      { icon: "🛣️", text: "8 km", tone: "green" },
-      { icon: "🕒", text: "~20 min", tone: "blue" },
-      { icon: "⛰️", text: "2 hrs", tone: "pink" },
+      { icon: "road", text: "8 km", tone: "green" },
+      { icon: "clock", text: "~20 min", tone: "blue" },
+      { icon: "mountain", text: "2 hrs", tone: "pink" },
     ],
   },
   {
@@ -147,11 +154,12 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     sinhala: "රම්බොඩ දිය ඇල්ල",
     description:
       "Magnificent 109m waterfall cascading through lush greenery along the Kandy road.",
+    imageSrc: "/images/08.jpeg",
     destinationQuery: "Ramboda Falls",
     chips: [
-      { icon: "🛣️", text: "28 km", tone: "green" },
-      { icon: "🕒", text: "~45 min", tone: "blue" },
-      { icon: "📸", text: "1–2 hrs", tone: "pink" },
+      { icon: "road", text: "28 km", tone: "green" },
+      { icon: "clock", text: "~45 min", tone: "blue" },
+      { icon: "camera", text: "1–2 hrs", tone: "pink" },
     ],
   },
 ];

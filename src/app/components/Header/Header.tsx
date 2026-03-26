@@ -41,7 +41,7 @@ export default function Header() {
           unoptimized
         />
       </div>
-      <div className={styles.inner}>
+      <div className={`container ${styles.inner}`}>
         {/* Logo / Brand */}
         <Link href="/" className={styles.brand}>
           <Image
@@ -90,16 +90,18 @@ export default function Header() {
       {/* Mobile icon bar – toggled by hamburger on small screens */}
       {menuOpen && (
         <nav className={styles.mobileIconNav} aria-label="Mobile quick navigation">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`${styles.mobileIconLink} ${pathname === link.href ? styles.active : ""}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              <FontAwesomeIcon icon={link.icon} />
-            </Link>
-          ))}
+          <div className={`container ${styles.mobileIconInner}`}>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`${styles.mobileIconLink} ${pathname === link.href ? styles.active : ""}`}
+                onClick={() => setMenuOpen(false)}
+              >
+                <FontAwesomeIcon icon={link.icon} />
+              </Link>
+            ))}
+          </div>
         </nav>
       )}
     </header>

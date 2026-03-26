@@ -21,8 +21,8 @@ function getTileVariantClass(index: number) {
 
 export default function GalleryPreview() {
   return (
-    <div className="container">
-      <section className={styles.galleryPreviewSection}>
+    <section className={styles.galleryPreviewSection}>
+      <div className="container">
         <SectionLabel label="GALLERY" />
         <div className={styles.grid}>
           {images.map((img, index) => (
@@ -48,7 +48,7 @@ export default function GalleryPreview() {
             View More
           </Link>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

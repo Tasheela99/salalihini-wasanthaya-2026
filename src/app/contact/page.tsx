@@ -1,16 +1,8 @@
 import {
-  faFacebookF,
-  faInstagram,
-  faXTwitter,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faClock,
-  faEnvelope,
-  faLocationDot,
-  faMapLocationDot,
-  faPaperPlane,
-  faPhone,
+    faClock,
+    faEnvelope,
+    faLocationDot,
+    faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { Metadata } from "next";
@@ -79,122 +71,28 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── Contact Form ─────────────────────────────────── */}
-      <section className={`section ${styles.formSection}`}>
+      {/* ── Map ─────────────────────────────────────────── */}
+      <section className="section">
         <div className="container">
-          <div className={styles.formWrapper}>
-            <div className={styles.formInfo}>
-              <h2 className={styles.formHeading}>Send Us a Message</h2>
-              <p className={styles.formDesc}>
-                Whether you have a question about tickets, sponsorships,
-                performances, or anything else, our team is ready to answer
-                your queries.
-              </p>
-              <div className={styles.socialLinks}>
-                <span className={styles.socialLabel}>Follow us</span>
-                <div className={styles.socialIcons}>
-                  <button
-                    type="button"
-                    aria-label="Facebook"
-                    className={styles.socialIcon}
-                  >
-                    <FontAwesomeIcon icon={faFacebookF} />
-                  </button>
-                  <button
-                    type="button"
-                    aria-label="Instagram"
-                    className={styles.socialIcon}
-                  >
-                    <FontAwesomeIcon icon={faInstagram} />
-                  </button>
-                  <button
-                    type="button"
-                    aria-label="YouTube"
-                    className={styles.socialIcon}
-                  >
-                    <FontAwesomeIcon icon={faYoutube} />
-                  </button>
-                  <button
-                    type="button"
-                    aria-label="Twitter / X"
-                    className={styles.socialIcon}
-                  >
-                    <FontAwesomeIcon icon={faXTwitter} />
-                  </button>
-                </div>
-              </div>
+          <SectionLabel label="FIND US" />
+          <div className={styles.mapCard}>
+            <iframe
+              className={styles.mapFrame}
+              title="Colombo Map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=79.838%2C6.930%2C79.852%2C6.942&layer=mapnik&marker=6.936%2C79.845"
+              loading="lazy"
+            />
+            <div className={styles.mapFooter}>
+              <div className={styles.mapLocation}>Colombo 01, Sri Lanka</div>
+              <a
+                className={styles.mapLink}
+                href="https://www.openstreetmap.org/?mlat=6.936&mlon=79.845#map=15/6.936/79.845"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Larger Map →
+              </a>
             </div>
-
-            <form className={styles.form}>
-              <div className={styles.row}>
-                <div className={styles.field}>
-                  <label htmlFor="name" className={styles.label}>
-                    Full Name
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    className={styles.input}
-                    placeholder="Your name"
-                    required
-                  />
-                </div>
-                <div className={styles.field}>
-                  <label htmlFor="email" className={styles.label}>
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    className={styles.input}
-                    placeholder="you@example.com"
-                    required
-                  />
-                </div>
-              </div>
-              <div className={styles.field}>
-                <label htmlFor="subject" className={styles.label}>
-                  Subject
-                </label>
-                <input
-                  id="subject"
-                  type="text"
-                  className={styles.input}
-                  placeholder="How can we help?"
-                />
-              </div>
-              <div className={styles.field}>
-                <label htmlFor="message" className={styles.label}>
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  className={styles.textarea}
-                  rows={5}
-                  placeholder="Your message..."
-                  required
-                />
-              </div>
-              <button type="submit" className={styles.submitBtn}>
-                <FontAwesomeIcon icon={faPaperPlane} />
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Map placeholder ──────────────────────────────── */}
-      <section className={styles.mapSection}>
-        <div className="container">
-          <h2 className="section-title">Find Us</h2>
-          <p className="section-subtitle">
-            Located in the heart of Colombo, easily accessible by public
-            transport.
-          </p>
-          <div className={styles.mapPlaceholder}>
-            <FontAwesomeIcon icon={faMapLocationDot} />
-            <span>Map will be displayed here</span>
           </div>
         </div>
       </section>

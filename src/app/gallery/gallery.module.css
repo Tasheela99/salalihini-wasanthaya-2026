@@ -141,7 +141,8 @@
   }
 
   .gallerySection {
-    padding: 24px 20px 40px;
+    padding-top: var(--sp-6);
+    padding-bottom: var(--sp-10);
   }
 }
 
