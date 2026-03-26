@@ -59,12 +59,12 @@
   width: 60px;
   height: 60px;
   border-radius: var(--radius-sm);
-  background-color: #C4C4C4;
+  background-color: var(--color-secondary-light);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.5rem;
-  color: #888;
+  color: var(--color-text-secondary);
   flex-shrink: 0;
 }
 
@@ -86,7 +86,7 @@
 .newsMonth {
   font-size: var(--fs-xs);
   font-weight: 600;
-  color: #999;
+  color: var(--color-text-secondary);
   text-transform: uppercase;
 }
 
@@ -108,19 +108,19 @@
 
 .newsMeta {
   font-size: var(--fs-xs);
-  color: #999;
+  color: var(--color-text-secondary);
 }
 
 /* ── Campaign ────────────────────────────────────────────── */
 .campaignPlaceholder {
   width: 100%;
   aspect-ratio: 16 / 10;
-  background-color: #C4C4C4;
+  background-color: var(--color-secondary-light);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: var(--fs-lg);
   margin-bottom: var(--sp-4);
 }
@@ -152,7 +152,7 @@
 .quoteText {
   font-size: var(--fs-sm);
   font-style: italic;
-  color: #888;
+  color: var(--color-text-secondary);
   line-height: 1.8;
   margin-bottom: var(--sp-6);
 }
@@ -167,18 +167,18 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: #C4C4C4;
+  background-color: var(--color-secondary-light);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.4rem;
-  color: #888;
+  color: var(--color-text-secondary);
   flex-shrink: 0;
 }
 
 .authorInfo {
   font-size: var(--fs-sm);
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .authorName {

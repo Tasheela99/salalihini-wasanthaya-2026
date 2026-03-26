@@ -64,19 +64,19 @@ const schedule: DaySchedule[] = [
 
 const tagColors: Record<string, string> = {
   Opening: "var(--color-primary)",
-  Workshop: "#2E86C1",
-  Performance: "var(--color-secondary-dark)",
-  Food: "#D4AC0D",
-  Art: "#1A5276",
-  Music: "#6C3483",
-  Wellness: "#27AE60",
-  Family: "#E67E22",
-  Talk: "#2E7B4E",
-  Literature: "#8E44AD",
-  Procession: "#C0392B",
-  Theatre: "#6C3483",
-  Ceremony: "var(--color-primary-dark)",
-  Finale: "#C0392B",
+  Workshop: "var(--color-accent-blue)",
+  Performance: "var(--color-secondary)",
+  Food: "var(--color-primary)",
+  Art: "var(--color-accent-blue)",
+  Music: "var(--color-accent-red)",
+  Wellness: "var(--color-secondary)",
+  Family: "var(--color-primary)",
+  Talk: "var(--color-accent-blue)",
+  Literature: "var(--color-accent-red)",
+  Procession: "var(--color-accent-red)",
+  Theatre: "var(--color-accent-blue)",
+  Ceremony: "var(--color-bg-topbar)",
+  Finale: "var(--color-accent-red)",
 };
 
 export default function SchedulePage() {
@@ -118,20 +118,6 @@ export default function SchedulePage() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ── Info Banner ──────────────────────────────────── */}
-      <section className={styles.infoBanner}>
-        <div className="container" style={{ textAlign: "center" }}>
-          <h2 className={styles.infoTitle}>Plan Your Visit</h2>
-          <p className={styles.infoText}>
-            Programmes may be subject to change. Follow our social channels for
-            real-time updates during the event.
-          </p>
-          <a href="/contact" className={styles.infoBtn}>
-            Contact Us for Details
-          </a>
         </div>
       </section>
     </>

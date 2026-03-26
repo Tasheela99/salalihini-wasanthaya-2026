@@ -59,10 +59,10 @@ const articles = [
 
 const categoryColors: Record<string, string> = {
   Announcement: "var(--color-secondary)",
-  Rehearsals:   "var(--color-primary-dark)",
-  Artists:      "#2E7B4E",
-  Venue:        "#1A5276",
-  Sponsorship:  "#6C3483",
+  Rehearsals: "var(--color-bg-topbar)",
+  Artists: "var(--color-accent-blue)",
+  Venue: "var(--color-primary)",
+  Sponsorship: "var(--color-accent-red)",
 };
 
 export default function NewsPage() {

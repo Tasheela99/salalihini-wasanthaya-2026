@@ -26,13 +26,15 @@
 
 .brandSub {
   font-size: var(--fs-sm);
-  color: var(--color-text-muted);
+  color: var(--color-text-on-dark);
+  opacity: 0.85;
   letter-spacing: 0.04em;
 }
 
 .brandDesc {
   font-size: var(--fs-sm);
-  color: var(--color-accent-dark);
+  color: var(--color-text-on-dark);
+  opacity: 0.85;
   line-height: 1.7;
   margin-top: var(--sp-2);
   max-width: 280px;
@@ -63,12 +65,14 @@
 
 .footerLink {
   font-size: var(--fs-sm);
-  color: var(--color-accent-dark);
+  color: var(--color-text-on-dark);
+  opacity: 0.85;
   transition: color 0.2s, padding-left 0.2s;
 }
 
 .footerLink:hover {
   color: var(--color-primary-light);
+  opacity: 1;
   padding-left: var(--sp-2);
 }
 
@@ -79,7 +83,8 @@
   flex-direction: column;
   gap: var(--sp-3);
   font-size: var(--fs-sm);
-  color: var(--color-accent-dark);
+  color: var(--color-text-on-dark);
+  opacity: 0.85;
   line-height: 1.6;
 }
 
@@ -113,7 +118,8 @@
   padding: var(--sp-4) 0;
   text-align: center;
   font-size: var(--fs-xs);
-  color: var(--color-text-muted);
+  color: var(--color-text-on-dark);
+  opacity: 0.72;
 }
 
 /* ── Responsive ────────────────────────────────────────────── */

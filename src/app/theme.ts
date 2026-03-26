@@ -13,42 +13,45 @@
 
 // ── Colour Palette ───────────────────────────────────────────
 export const colors = {
-  /** Primary brand colour – deep green */
-  primary: "#2D5F3F", // main green
-  /** Slightly lighter primary for hover states */
-  primaryLight: "#3D8B52",
-  /** Dark shade used for text on light backgrounds */
-  primaryDark: "#1A3A24",
+  /** Primary – Spring Gold */
+  primary: "#F4B942",
+  primaryLight: "#F4B942",
+  /** Used as the main dark text */
+  primaryDark: "#1E2A2E", // Rich Charcoal
 
-  /** Secondary brand colour – light green */
-  secondary: "#A7E9AF", // pale green
-  secondaryLight: "#D0F5DF", // even lighter green
-  secondaryDark: "#6FCF97", // accent green
+  /** Secondary – Ceylon Green */
+  secondary: "#2F6B3E",
+  secondaryLight: "rgba(47, 107, 62, 0.12)",
+  secondaryDark: "#2F6B3E",
 
-  /** Accent – white and off-white */
-  accent: "#F5FFF6", // very light greenish white
-  accentDark: "#E2F5E8",
+  /** Accents */
+  accentRed: "#C33C2C", // Auspicious Red
+  accentBlue: "#3A6EA5", // Hill Country Blue
 
-  /** Neutral shades */
-  white: "#FFFFFF",
-  black: "#111111",
+  /** Backgrounds */
+  accent: "#FFF9EF", // Creamy White
+  accentDark: "rgba(255, 249, 239, 0.85)",
+
+  /** Neutrals mapped to palette */
+  white: "#FFF9EF",
+  black: "#2E241F", // Deep Earth
 
   /** Surface / background colours */
-  bgPage: "#F8FFF9",        // pale greenish white page background
-  bgTopbar: "#2D5F3F",      // topbar background (main green)
-  bgHeader: "#FFFFFF",      // main header background
-  bgFooter: "#1A3A24",      // dark green footer background
+  bgPage: "#FFF9EF",
+  bgTopbar: "#2F6B3E",
+  bgHeader: "#FFF9EF",
+  bgFooter: "#1E2A2E",
 
   /** Text colours */
-  textPrimary: "#1A3A24",
-  textSecondary: "#3D8B52",
-  textMuted: "#6FCF97",
-  textOnDark: "#F5FFF6",    // text placed on dark backgrounds
-  textOnPrimary: "#FFFFFF", // text placed on primary-coloured bg
+  textPrimary: "#1E2A2E",
+  textSecondary: "#5C5B53",
+  textMuted: "rgba(92, 91, 83, 0.72)",
+  textOnDark: "#FFF9EF",
+  textOnPrimary: "#2E241F",
 
   /** Border / divider */
-  border: "#D0F5DF",
-  borderDark: "#A7E9AF",
+  border: "rgba(47, 107, 62, 0.25)",
+  borderDark: "rgba(47, 107, 62, 0.45)",
 } as const;
 
 // ── Typography ───────────────────────────────────────────────

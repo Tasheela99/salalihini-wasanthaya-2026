@@ -113,7 +113,7 @@
 
 .eventTag {
   display: inline-block;
-  color: var(--color-text-on-primary);
+  color: var(--color-text-on-dark);
   padding: 2px var(--sp-3);
   border-radius: var(--radius-full);
   font-size: 10px;

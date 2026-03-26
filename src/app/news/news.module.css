@@ -1,6 +1,5 @@
 /* ── Page Hero ───────────────────────────────────────────── */
 .pageHero {
-  background: linear-gradient(135deg, var(--color-secondary-dark) 0%, var(--color-secondary) 100%);
   padding: var(--sp-20) 0 var(--sp-12);
   text-align: center;
 }
@@ -8,12 +7,12 @@
 .pageTitle {
   font-family: var(--font-heading);
   font-size: var(--fs-4xl);
-  color: var(--color-text-on-dark);
+  color: var(--color-text-primary);
 }
 
 .pageSubtitle {
   font-size: var(--fs-lg);
-  color: var(--color-accent-dark);
+  color: var(--color-text-secondary);
   margin-top: var(--sp-2);
 }
 
@@ -54,7 +53,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
   padding: 3px var(--sp-3);
   border-radius: var(--radius-full);
 }
@@ -82,7 +81,7 @@
   align-self: flex-start;
   background: none;
   border: none;
-  color: var(--color-primary-dark);
+  color: var(--color-accent-blue);
   font-size: var(--fs-sm);
   font-weight: 600;
   font-family: var(--font-body);

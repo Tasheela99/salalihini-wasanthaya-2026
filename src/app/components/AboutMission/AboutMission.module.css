@@ -1,6 +1,6 @@
 /* ── AboutMission ─────────────────────────────────────────── */
 .about {
-  background-color: var(--color-white);
+  background-color: var(--color-bg-page);
 }
 .headingWrap {
   text-align: center;
@@ -12,14 +12,14 @@
   letter-spacing: 3px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-accent-dark);
+  color: var(--color-accent-blue);
   margin-bottom: 10px;
 }
 
 .sinhalaHeading {
   font-family: var(--font-heading);
   font-size: 2.2rem;
-  color: var(--color-secondary-dark);
+  color: var(--color-text-primary);
   font-weight: 700;
 }
 
@@ -63,12 +63,12 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 2px solid #2d2418;
+  border: 2px solid var(--color-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #2d2418;
+  color: var(--color-secondary);
   font-size: 1.1rem;
 }
 
@@ -84,7 +84,7 @@
 
 .itemDesc {
   font-size: var(--fs-sm);
-  color: #888;
+  color: var(--color-text-secondary);
   line-height: 1.8;
 }
 

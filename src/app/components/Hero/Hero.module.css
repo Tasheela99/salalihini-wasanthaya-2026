@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600&family=Noto+Serif+Sinhala:wght@400;700;900&display=swap');
 
-:root {
-  --dark:         #0c0c12;
-  --accent:       #d4a843;
-  --accent-light: #f0c96a;
-  --white:        #f8f3ea;
-  --muted:        rgba(248, 243, 234, 0.65);
-}
-
 /* ─── Hero wrapper ─────────────────────────────────────────────── */
 .hero {
   position: relative;
@@ -15,7 +7,7 @@
   height: 100vh;
   min-height: 580px;
   overflow: hidden;
-  background: var(--dark);
+  background: var(--color-bg-footer);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,8 +68,8 @@
   font-weight: 600;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--dark);
-  background: var(--accent);
+  color: var(--color-text-on-primary);
+  background: var(--color-primary);
   padding: 0.35rem 1.1rem;
   border-radius: 999px;
   margin-bottom: 1.4rem;
@@ -90,7 +82,7 @@
   font-size: clamp(2.4rem, 6vw, 4.8rem);
   font-weight: 900;
   line-height: 1.15;
-  color: var(--white);
+  color: var(--color-text-on-dark);
   margin: 0 0 0.5rem;
   text-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
   animation: fadeUp 0.8s ease both;
@@ -103,7 +95,7 @@
   font-size: clamp(1rem, 2.2vw, 1.5rem);
   font-weight: 400;
   font-style: italic;
-  color: var(--accent-light);
+  color: var(--color-accent-blue);
   margin: 0 0 1.5rem;
   letter-spacing: 0.04em;
   animation: fadeUp 0.8s ease both;
@@ -114,7 +106,7 @@
 .ruleLine {
   width: 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  background: linear-gradient(to right, transparent, var(--color-primary), transparent);
   margin: 0 auto 1.6rem;
   animation: expandLine 0.8s ease both;
   animation-delay: 0.35s;
@@ -126,7 +118,7 @@
   font-size: clamp(1rem, 1.8vw, 1.18rem);
   font-weight: 300;
   line-height: 1.8;
-  color: var(--muted);
+  color: rgba(255, 249, 239, 0.75);
   max-width: 580px;
   margin: 0 0 2.4rem;
   animation: fadeUp 0.8s ease both;
@@ -149,7 +141,7 @@
   align-items: center;
   justify-content: center;
   background: rgba(12, 12, 18, 0.6);
-  border: 1px solid rgba(212, 168, 67, 0.3);
+  border: 1px solid rgba(244, 185, 66, 0.3);
   border-radius: 8px;
   min-width: 80px;
   padding: 1rem 0.5rem;
@@ -159,14 +151,14 @@
 
 .timeBox:hover {
   transform: translateY(-3px);
-  border-color: var(--accent);
+  border-color: var(--color-primary);
 }
 
 .timeValue {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--color-text-on-dark);
   line-height: 1;
   margin-bottom: 0.25rem;
 }
@@ -177,7 +169,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent-light);
+  color: var(--color-accent-blue);
 }
 
 /* ─── Dot navigation ──────────────────────────────────────────── */
@@ -196,7 +188,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(248, 243, 234, 0.3);
+  background: rgba(255, 249, 239, 0.3);
   border: none;
   padding: 0;
   cursor: pointer;
@@ -204,7 +196,7 @@
 }
 
 .dot.activeDot {
-  background: var(--accent);
+  background: var(--color-primary);
   transform: scale(1.6);
 }
 
@@ -215,14 +207,14 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: rgba(248, 243, 234, 0.1);
+  background: rgba(255, 249, 239, 0.1);
   z-index: 15;
 }
 
 .progressFill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(to right, var(--accent), var(--accent-light));
+  background: linear-gradient(to right, var(--color-primary), var(--color-accent-blue));
   animation: fillBar linear both;
 }
 

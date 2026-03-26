@@ -74,7 +74,7 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(111, 207, 151, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(47, 107, 62, 0.25) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -246,14 +246,14 @@ a.secondary {
   }
 
   .page {
-    --background: #000;
-    --foreground: #000;
+    --background: var(--color-bg-footer);
+    --foreground: var(--color-bg-footer);
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+    --text-primary: var(--color-text-on-dark);
+    --text-secondary: rgba(255, 249, 239, 0.72);
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+    --button-primary-hover: var(--color-primary);
+    --button-secondary-hover: rgba(255, 249, 239, 0.08);
+    --button-secondary-border: rgba(255, 249, 239, 0.25);
   }
 }

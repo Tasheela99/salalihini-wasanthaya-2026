@@ -1,6 +1,6 @@
 /* ── Gallery Preview Section ─────────────── */
 .galleryPreviewSection {
-  background: var(--color-white);
+  background: var(--color-bg-page);
   padding: 56px 0 40px 0;
   text-align: center;
 }
@@ -15,20 +15,20 @@
   letter-spacing: 3px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-accent-dark);
+  color: var(--color-accent-blue);
   margin-bottom: 10px;
 }
 
 .sinhalaHeading {
   font-family: var(--font-heading);
   font-size: 2.2rem;
-  color: var(--color-secondary-dark);
+  color: var(--color-text-primary);
   font-weight: 700;
 }
 .heading {
   font-family: var(--font-heading);
   font-size: 2rem;
-  color: var(--color-secondary-dark);
+  color: var(--color-text-primary);
   margin-bottom: 28px;
   font-weight: 700;
 }
@@ -71,7 +71,7 @@
 .viewMoreBtn {
   display: inline-block;
   background: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-text-on-primary);
   font-weight: 600;
   padding: 12px 32px;
   border-radius: 24px;
@@ -80,7 +80,7 @@
   transition: background 0.2s;
 }
 .viewMoreBtn:hover {
-  background: var(--color-secondary-dark);
+  background: var(--color-accent-red);
 }
 @media (max-width: 900px) {
   .grid {

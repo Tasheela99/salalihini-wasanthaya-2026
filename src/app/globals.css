@@ -7,42 +7,49 @@
 /* ── CSS Custom Properties (mirrors theme.ts) ──────────────── */
 :root {
   /* Colours */
-  --color-primary:          #2D5F3F;
-  --color-primary-light:    #3D8B52;
+  /* Brand roles */
+  --color-primary:          #F4B942; /* Spring Gold */
+  --color-primary-light:    #F4B942;
+  --color-primary-dark:     #1E2A2E; /* Rich Charcoal */
 
-/* On small screens the Topbar is hidden and the Header is
-   pinned to the very top, so only offset by the header
-   height to avoid an extra white band. */
-@media (max-width: 640px) {
-  .page-content {
-    padding-top: 100px; /* header height only */
-  }
-}
-  --color-primary-dark:     #1A3A24;
+  --color-secondary:        #2F6B3E; /* Ceylon Green */
+  --color-secondary-light:  rgba(47, 107, 62, 0.12);
+  --color-secondary-dark:   #2F6B3E;
 
-  --color-secondary:        #A7E9AF;
-  --color-secondary-light:  #D0F5DF;
-  --color-secondary-dark:   #6FCF97;
+  /* Accents (explicit) */
+  --color-accent-red:       #C33C2C; /* Auspicious Red */
+  --color-accent-blue:      #3A6EA5; /* Hill Country Blue */
 
-  --color-accent:           #F5FFF6;
-  --color-accent-dark:      #E2F5E8;
+  /* Accent tints (derived from palette) */
+  --color-accent-red-light:  rgba(195, 60, 44, 0.10);
+  --color-accent-blue-light: rgba(58, 110, 165, 0.12);
 
-  --color-white:            #FFFFFF;
-  --color-black:            #111111;
+  /* General accent surfaces */
+  --color-accent:           #FFF9EF; /* Creamy White */
+  --color-accent-dark:      rgba(255, 249, 239, 0.85);
 
-  --color-bg-page:          #F8FFF9;
-  --color-bg-topbar:        #2D5F3F;
-  --color-bg-header:        #FFFFFF;
-  --color-bg-footer:        #1A3A24;
+  --color-white:            #FFF9EF;
+  --color-black:            #2E241F;
 
-  --color-text-primary:     #1A3A24;
-  --color-text-secondary:   #3D8B52;
-  --color-text-muted:       #6FCF97;
-  --color-text-on-dark:     #F5FFF6;
-  --color-text-on-primary:  #FFFFFF;
+  --color-bg-page:          #FFF9EF; /* Creamy White */
+  --color-bg-topbar:        #2F6B3E; /* Ceylon Green */
+  --color-bg-header:        #FFF9EF;
+  --color-bg-footer:        #1E2A2E;
+  --color-bg-card:          #FFF9EF;
 
-  --color-border:           #D0F5DF;
-  --color-border-dark:      #A7E9AF;
+  /* Glass surfaces (derived from palette) */
+  --color-glass-dark:       rgba(30, 42, 46, 0.58); /* Rich Charcoal @ 58% */
+  --color-glass-border:     rgba(255, 249, 239, 0.14); /* Creamy White @ 14% */
+  --color-glass-highlight:  rgba(255, 249, 239, 0.10); /* Creamy White @ 10% */
+
+  --color-text-primary:     #1E2A2E; /* Rich Charcoal */
+  --color-text-secondary:   #5C5B53; /* Warm Gray */
+  --color-text-muted:       rgba(92, 91, 83, 0.72);
+  --color-text-on-dark:     #FFF9EF;
+  --color-text-on-primary:  #2E241F;
+
+  --color-border:           rgba(47, 107, 62, 0.25);
+  --color-border-dark:      rgba(47, 107, 62, 0.45);
 
   /* Typography - Roboto font from Next.js font optimization */
   --font-heading: var(--font-roboto), 'Roboto', Arial, Helvetica, sans-serif;
@@ -118,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: inherit;
+  color: var(--color-accent-blue);
   text-decoration: none;
 }
 
@@ -146,17 +153,26 @@ img, video {
 .section-title {
   font-family: var(--font-heading);
   font-size: var(--fs-3xl);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: var(--sp-4);
 }
 
 .section-subtitle {
   font-size: var(--fs-md);
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   margin-bottom: var(--sp-8);
 }
 
 /* ── Page wrapper offset for fixed topbar + header ─────────── */
 .page-content {
   padding-top: calc(38px + 100px); /* topbar height + header height */
+}
+
+/* On small screens the Topbar is hidden and the Header is
+   pinned to the very top, so only offset by the header
+   height to avoid an extra white band. */
+@media (max-width: 640px) {
+  .page-content {
+    padding-top: 100px; /* header height only */
+  }
 }

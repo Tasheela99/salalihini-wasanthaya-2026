@@ -31,8 +31,8 @@ export default function GalleryPage() {
   return (
     <>
       {/* ── Grid ─────────────────────────────────────────── */}
-      <div className="container" style={{ paddingTop: "3rem" }}>
-        <section className="pt-5">
+      <section className={styles.gallerySection}>
+        <div className="container">
           <SectionLabel label="GALLERY" />
           <div className={styles.galleryGrid}>
             {images.map((img, index) => (
@@ -59,8 +59,8 @@ export default function GalleryPage() {
               </div>
             ))}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </>
   );
 }

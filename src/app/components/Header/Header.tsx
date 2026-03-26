@@ -44,6 +44,13 @@ export default function Header() {
       <div className={styles.inner}>
         {/* Logo / Brand */}
         <Link href="/" className={styles.brand}>
+          <Image
+            src="/images/logo.png"
+            alt="Salalihini Wasanthaya Logo"
+            width={100}
+            height={70}
+            className={styles.brandLogo}
+          />
           <div className={styles.brandText}>
             <span className={styles.brandTitle}>සැළලිහිණි  වසන්තය</span>
           </div>

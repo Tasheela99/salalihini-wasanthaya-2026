@@ -30,7 +30,8 @@ export default function Footer() {
       <div className={`container ${styles.grid}`}>
         {/* Brand */}
         <div className={styles.brand}>
-          <h3 className={styles.brandTitle}>සළලිහිණි වසන්තය</h3>
+          <img src="/images/logo.png" alt="Salalihini Wasanthaya Logo" className={styles.brandLogo} style={{ maxWidth: '80px', height: 'auto' }} />
+          <h3 className={styles.brandTitle}>සැළලිහිණි  වසන්තය</h3>
           <p className={styles.brandSub}>Salalihini Wasanthaya 2026</p>
           <p className={styles.brandDesc}>
             Celebrating the spirit of spring through art, culture, and music.

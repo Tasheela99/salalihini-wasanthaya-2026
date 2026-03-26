@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   z-index: var(--z-topbar);
-  background-color: #272727;
+  background-color: var(--color-bg-topbar);
   color: var(--color-text-on-dark);
   font-size: var(--fs-sm);
   height: 38px;
@@ -38,7 +38,7 @@
 }
 
 .socialLink:hover {
-  color: var(--color-primary-light);
+  color: var(--color-primary);
   opacity: 1;
 }
 

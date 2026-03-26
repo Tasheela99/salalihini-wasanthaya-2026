@@ -1,6 +1,6 @@
 /* ── Features ────────────────────────────────────────────── */
 .features {
-  background-color: #2d2418;
+  background-color: var(--color-bg-footer);
 }
 
 .featureGrid {
@@ -25,7 +25,7 @@
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  border: 2px solid #FFFFFF;
+  border: 2px solid var(--color-text-on-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,14 +35,14 @@
 
 .featureIcon {
   font-size: 1.6rem;
-  color: #FFFFFF;
+  color: var(--color-text-on-dark);
 }
 
 .featureTitle {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--color-text-on-dark);
   margin-bottom: 16px;
   letter-spacing: 0.01em;
 }
@@ -61,15 +61,15 @@
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: var(--color-text-on-dark);
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
 
 .featureLink:hover {
-  color: #A7E9AF;
-  border-color: #A7E9AF;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 /* ── Responsive ──────────────────────────────────────────── */
@@ -79,7 +79,7 @@
   }
   .featureCard {
     border-right: none;
-    border-bottom: 1px solid rgba(111, 207, 151, 0.2);
+    border-bottom: 1px solid rgba(244, 185, 66, 0.2);
   }
   .featureCard:last-child {
     border-bottom: none;

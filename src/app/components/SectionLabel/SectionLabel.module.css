@@ -15,7 +15,7 @@
   letter-spacing: 2.5px;
   font-size: 40px;
   font-weight: 600; 
-  color: #253526;
+  color: var(--color-text-primary);
   position: relative;
   padding-bottom: 8px;
 }
@@ -28,7 +28,7 @@
   bottom: 0;
   width: 35px;
   height: 2px;
-  background-color: #253526;
+  background-color: var(--color-secondary);
   transition: width 0.3s ease;
 }
 

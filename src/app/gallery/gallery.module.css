@@ -30,6 +30,11 @@
   margin: 0 auto;
 }
 
+.gallerySection {
+  padding-top: var(--sp-12);
+  padding-bottom: var(--sp-16);
+}
+
 
 .galleryGrid {
   display: grid;
