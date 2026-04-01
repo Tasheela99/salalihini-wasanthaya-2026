@@ -35,6 +35,7 @@ export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [animKey, setAnimKey] = useState(0);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [isExpired, setIsExpired] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Slider Interval (for content only)
@@ -60,6 +61,7 @@ export default function Hero() {
           seconds: Math.floor((difference % (1000 * 60)) / 1000),
         });
       } else {
+        setIsExpired(true);
         clearInterval(countdownTimer);
       }
     }, 1000);
@@ -112,24 +114,26 @@ export default function Hero() {
         <p className={styles.desc}>{slide.desc}</p>
 
         {/* ── Countdown Timer ── */}
-        <div className={styles.countdownContainer}>
-          <div className={styles.timeBox}>
-            <span className={styles.timeValue}>{timeLeft.days}</span>
-            <span className={styles.timeLabel}>Days</span>
+        {!isExpired && (
+          <div className={styles.countdownContainer}>
+            <div className={styles.timeBox}>
+              <span className={styles.timeValue}>{timeLeft.days}</span>
+              <span className={styles.timeLabel}>Days</span>
+            </div>
+            <div className={styles.timeBox}>
+              <span className={styles.timeValue}>{timeLeft.hours}</span>
+              <span className={styles.timeLabel}>Hours</span>
+            </div>
+            <div className={styles.timeBox}>
+              <span className={styles.timeValue}>{timeLeft.minutes}</span>
+              <span className={styles.timeLabel}>Mins</span>
+            </div>
+            <div className={styles.timeBox}>
+              <span className={styles.timeValue}>{timeLeft.seconds}</span>
+              <span className={styles.timeLabel}>Secs</span>
+            </div>
           </div>
-          <div className={styles.timeBox}>
-            <span className={styles.timeValue}>{timeLeft.hours}</span>
-            <span className={styles.timeLabel}>Hours</span>
-          </div>
-          <div className={styles.timeBox}>
-            <span className={styles.timeValue}>{timeLeft.minutes}</span>
-            <span className={styles.timeLabel}>Mins</span>
-          </div>
-          <div className={styles.timeBox}>
-            <span className={styles.timeValue}>{timeLeft.seconds}</span>
-            <span className={styles.timeLabel}>Secs</span>
-          </div>
-        </div>
+        )}
       </div>
 
       {/* ── Dot navigation ── */}
