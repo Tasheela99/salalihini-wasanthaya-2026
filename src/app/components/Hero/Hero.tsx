@@ -1,13 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from './Hero.module.css';
 
-const slides = [
+const contentSlides = [
   {
     id: 1,
-    image: "/images/03.jpeg",
-    alt: "Beautiful spring nature landscape",
     badge: "2026 Season",
     title: "සැළලිහිණි වසන්තය",
     subtitle: "Salalihini Wasanthaya",
@@ -15,8 +13,6 @@ const slides = [
   },
   {
     id: 2,
-    image: "/images/08.jpeg",
-    alt: "Cultural festival and celebration",
     badge: "Art & Culture",
     title: "කලාව සහ සංස්කෘතිය",
     subtitle: "Art & Cultural Showcase",
@@ -24,8 +20,6 @@ const slides = [
   },
   {
     id: 3,
-    image: "/images/19.jpeg",
-    alt: "Music performance on stage",
     badge: "Music & Dance",
     title: "සංගීත රාත්‍රිය",
     subtitle: "Music Night 2026",
@@ -41,11 +35,12 @@ export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [animKey, setAnimKey] = useState(0);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Slider Interval
+  // Slider Interval (for content only)
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
+      setCurrent((prev) => (prev + 1) % contentSlides.length);
       setAnimKey((prev) => prev + 1);
     }, INTERVAL);
     return () => clearInterval(timer);
@@ -72,27 +67,39 @@ export default function Hero() {
     return () => clearInterval(countdownTimer);
   }, []);
 
+  // Ensure video plays (some browsers block autoplay)
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch(() => {
+        // Autoplay blocked — that's okay, user will see poster
+      });
+    }
+  }, []);
+
   const goTo = (i: number) => {
     setCurrent(i);
     setAnimKey((prev) => prev + 1);
   };
 
-  const slide = slides[current];
+  const slide = contentSlides[current];
 
   return (
     <section className={styles.hero}>
-      {/* ── Background slides ── */}
-      <div className={styles.slider}>
-        {slides.map((s, i) => (
-          <div
-            key={s.id}
-            className={`${styles.slide} ${i === current ? styles.active : ''}`}
-            style={{ backgroundImage: `url(${s.image})` }}
-            role="img"
-            aria-label={s.alt}
-            aria-hidden={i !== current}
-          />
-        ))}
+      {/* ── Video Background ── */}
+      <div className={styles.videoWrapper}>
+        <video
+          ref={videoRef}
+          className={styles.bgVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/images/03.jpeg"
+        >
+          <source src="/videos/0401.mp4" type="video/mp4" />
+        </video>
         <div className={styles.overlay} />
       </div>
 
@@ -127,7 +134,7 @@ export default function Hero() {
 
       {/* ── Dot navigation ── */}
       <nav className={styles.dots} aria-label="Slide navigation">
-        {slides.map((_, i) => (
+        {contentSlides.map((_, i) => (
           <button
             key={i}
             className={`${styles.dot} ${i === current ? styles.activeDot : ''}`}
