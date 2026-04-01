@@ -18,7 +18,7 @@ export default function Topbar() {
             <FontAwesomeIcon icon={faPhone} /> 0112587352
           </span>
           <span>
-            <FontAwesomeIcon icon={faEnvelope} /> info@salalihini.lk
+            <FontAwesomeIcon icon={faEnvelope} /> info@rupavahini.lk
           </span>
         </div>
 

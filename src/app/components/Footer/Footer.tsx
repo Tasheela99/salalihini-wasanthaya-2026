@@ -74,13 +74,13 @@ export default function Footer() {
           <h4 className={styles.colTitle}>Contact Us</h4>
           <ul className={styles.contactList}>
             <li>
-              <FontAwesomeIcon icon={faLocationDot} /> Colombo, Sri Lanka
+              <FontAwesomeIcon icon={faLocationDot} /> Gregory Park, Nuwaraeliya
             </li>
             <li>
               <FontAwesomeIcon icon={faPhone} /> 0112587352
             </li>
             <li>
-              <FontAwesomeIcon icon={faEnvelope} /> info@salalihini.lk
+              <FontAwesomeIcon icon={faEnvelope} /> info@rupavahini.lk
             </li>
           </ul>
         </div>

@@ -65,6 +65,35 @@
   height: 52px;
 }
 
+/* Tablet widths: keep header tidy by using icon-only nav
+   and giving the brand logos a bit more room. */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .salalihiniLogo {
+    width: 160px;
+    height: 42px;
+  }
+
+  .nav {
+    gap: 4px;
+    margin-right: 4px;
+  }
+
+  .navLink {
+    gap: 0;
+    padding: 0 2px;
+    letter-spacing: 0.4px;
+  }
+
+  .navLabel {
+    display: none;
+  }
+
+  .navIcon {
+    font-size: 16px;
+    opacity: 0.95;
+  }
+}
+
 .logoIcon {
   display: flex;
   align-items: center;
@@ -284,9 +313,35 @@
     display: none;
   }
 
+  /* Keep logos from colliding with the hamburger */
+  .brand {
+    min-width: 0;
+  }
+
+  .brandLogos {
+    gap: 6px;
+  }
+
+  .rupavahiniLogo {
+    width: auto;
+    height: 44px;
+  }
+
+  .festivalLogo {
+    width: auto;
+    height: 46px;
+  }
+
+  .salalihiniLogo {
+    width: auto;
+    height: 28px;
+    max-width: 46vw;
+  }
+
   /* Show hamburger and let it toggle icon bar */
   .hamburger {
     display: flex;
+    padding: var(--sp-1);
   }
 
   .mobileIconLink {

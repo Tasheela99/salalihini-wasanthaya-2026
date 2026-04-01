@@ -28,7 +28,7 @@ const contactCards = [
   {
     icon: faEnvelope,
     title: "Email Us",
-    lines: ["info@salalihini.lk", "tickets@salalihini.lk"],
+    lines: ["info@rupavahini.lk"],
   },
 ];
 

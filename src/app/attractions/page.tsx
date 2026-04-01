@@ -100,7 +100,7 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
   {
     id: "ambewela-farm",
     title: "Ambewela Farm",
-    sinhala: "අම්බෙවෙල ගොවිපල",
+    sinhala: "අබෙවෙල ගොවිපල",
     description:
       "Visit the famous dairy farm area and enjoy the fresh mountain air and scenery.",
     imageSrc: "/images/10.jpeg",

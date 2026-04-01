@@ -1,15 +1,15 @@
 "use client";
 
 import {
-    faCamera,
-    faClock,
-    faLandmark,
-    faMountain,
-    faMugHot,
-    faPersonHiking,
-    faPersonWalking,
-    faRoad,
-    faWater,
+  faCamera,
+  faClock,
+  faLandmark,
+  faMountain,
+  faMugHot,
+  faPersonHiking,
+  faPersonWalking,
+  faRoad,
+  faWater,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -148,11 +148,11 @@ export default function TourismGuideSection({ places }: Readonly<Props>) {
                 <span
                   key={`${p.id}-chip-${idx}`}
                   className={`${styles.chip} ${chipToneClassName(c.tone)}`}
+                  title={c.text}
                 >
                   <span className={styles.chipIcon} aria-hidden>
-                    <FontAwesomeIcon icon={chipIcon(c.icon)} fixedWidth />
+                    <FontAwesomeIcon icon={chipIcon(c.icon)} />
                   </span>
-                  {c.text}
                 </span>
               ))}
             </div>
