@@ -13,32 +13,30 @@
   justify-content: center;
 }
 
-/* ─── Slider ───────────────────────────────────────────────────── */
-.slider {
+/* ─── Video Background ─────────────────────────────────────────── */
+.videoWrapper {
   position: absolute;
   inset: 0;
+  z-index: 0;
 }
 
-.slide {
+.bgVideo {
   position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transform: scale(1.07);
-  transition: opacity 1.4s ease, transform 8s ease;
-  will-change: opacity, transform;
-}
-
-.slide.active {
-  opacity: 1;
-  transform: scale(1);
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
 /* Gradient overlay — heavier at bottom for text legibility */
 .overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     to bottom,
     rgba(12, 12, 18, 0.25) 0%,
