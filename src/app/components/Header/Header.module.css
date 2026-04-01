@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600&family=Noto+Serif+Sinhala:wght@400;700;900&display=swap');
+.header {
+  position: fixed;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-header);
+  background-color: var(--color-glass-dark);
+  border-bottom: 1px solid var(--color-glass-border);
+  color: var(--color-text-on-dark);
+  font-family: var(--font-body);
+  font-size: 13px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+}
+
+/* ── Flying Bird Animation ─────────────────────────────────── */
+.flyingBirdContainer {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.flyingBird {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: flyRightToLeft 20s linear infinite;
+  object-fit: contain;
+  width: 180px;
+  height: 140px;
+}
+
+@keyframes flyRightToLeft {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100px;
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  padding: 0;
+}
+
+/* ── Brand ─────────────────────────────────────────────────── */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoIcon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  justify-content: center;
+}
+
+.brandTitle {
+  /* Using your imported Sinhala Serif font */
+  font-family: 'Noto Serif Sinhala', serif;
+  font-size: 30px; 
+  font-weight: 900; 
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+  /* A subtle text shadow makes the delicate serif pop against the dark green */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); 
+}
+
+.brandSubtitle {
+  /* Using Cormorant Garamond for a highly elegant, classic look */
+  font-family: 'Cormorant Garamond', serif; 
+  font-size: 14px;
+  color: rgba(255, 249, 239, 0.86);
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+/* ── Right Section (Nav + Donate) ──────────────────────────── */
+.rightSection {
+  display: flex;
+  align-items: stretch;
+  height: 100px;
+  gap: 0;
+}
+
+/* ── Desktop Nav ───────────────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  margin-right: 8px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 249, 239, 0.92);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  position: relative;
+  padding: 0 4px;
+  height: 100px;
+  transition: color 0.2s;
+  font-family: var(--font-body);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+
+.navLink:hover::after,
+.navLink.active::after {
+  transform: scaleX(1);
+}
+
+.navIcon {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.navLabel {
+  font-weight: 500;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: var(--color-primary);
+}
+
+.navLink.active {
+  font-weight: 600;
+}
+
+/* ── Donate Button ─────────────────────────────────────────── */
+.donateBtn {
+  background-color: #ecb338;
+  height: 100px;
+  color: #1A3A24;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0 36px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.donateBtn:hover {
+  background-color: #ffd966;
+  color: #1A3A24;
+}
+
+/* ── Hamburger ─────────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--sp-2);
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text-on-dark);
+  border-radius: var(--radius-full);
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+/* ── Mobile Menu ───────────────────────────────────────────── */
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-header);
+  border-top: 1px solid var(--color-border);
+  padding: var(--sp-4) 0;
+}
+
+.mobileLink {
+  padding: var(--sp-3) var(--sp-6);
+  font-size: var(--fs-base);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  border-left: 3px solid transparent;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.mobileLink:hover,
+.mobileLink.active {
+  background-color: var(--color-accent);
+  border-left-color: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+
+/* ── Mobile Icon Bar (below header) ───────────────────────── */
+.mobileIconNav {
+  display: flex;
+  width: 100%;
+  background-color: var(--color-glass-dark);
+  border-top: 1px solid var(--color-glass-border);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+}
+
+.mobileIconInner {
+  display: flex;
+  width: 100%;
+}
+
+.mobileIconLink {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  color: rgba(255, 249, 239, 0.92);
+  font-size: 18px;
+}
+
+.mobileIconLink.active {
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop nav in header on mobile */
+  .nav {
+    display: none;
+  }
+
+  /* Show hamburger and let it toggle icon bar */
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileIconLink {
+    font-size: 20px;
+  }
+
+  .brandTitle {
+    font-size: 22px;
+  }
+}
+
+/* When the Topbar is hidden on very small screens, pull
+   the header up so there is no empty gap above it. */
+@media (max-width: 640px) {
+  .header {
+    top: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobileMenu {
+    display: none;
+  }
+}

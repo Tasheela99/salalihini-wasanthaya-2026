@@ -1,0 +1,110 @@
+/* ── CallToAction ─────────────────────────────────────────── */
+.cta {
+  position: relative;
+  background-image: url('/images/44.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* ✅ this is what you need */
+  padding-block: var(--sp-16);
+  isolation: isolate;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.2)
+  ); /* nicer overlay */
+  z-index: -1;
+}
+/* ── Countdown ───────────────────────────────────────────── */
+.countdownWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-inline: var(--sp-6);
+}
+
+.countdownBig {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-6);
+  flex-wrap: wrap;
+}
+
+.countdownItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(244, 185, 66, 0.25);
+  border-top: 4px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-8) var(--sp-10);
+  min-width: 148px;
+}
+
+.countdownValue {
+  font-family: 'Playfair Display', 'Noto Serif Sinhala', serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 900;
+  color: var(--color-primary);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.countdownLabel {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.8rem, 1.4vw, 1rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255, 249, 239, 0.72);
+}
+
+.countdownSep {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  color: var(--color-primary);
+  line-height: 1;
+  align-self: flex-start;
+  margin-top: var(--sp-8);
+  user-select: none;
+  opacity: 0.6;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .countdownItem {
+    min-width: 110px;
+    padding: var(--sp-6) var(--sp-7);
+  }
+
+  .countdownBig {
+    gap: var(--sp-3);
+    flex-wrap: nowrap; /* keep all units on one row on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .countdownItem {
+    min-width: 80px;
+    padding: var(--sp-5) var(--sp-5);
+  }
+
+  .countdownBig {
+    gap: var(--sp-2);
+  }
+
+  .countdownSep {
+    margin-top: var(--sp-5);
+  }
+}

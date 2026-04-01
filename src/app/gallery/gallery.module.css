@@ -1,0 +1,163 @@
+/* ── Gallery Header ─────────────────────────────────────── */
+.galleryHeader {
+  text-align: center;
+  padding: 60px 24px 32px;
+  background: var(--color-white);
+}
+
+.sectionLabel {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent-dark);
+  margin-bottom: 12px;
+}
+
+.sinhalaTitle {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-secondary-dark);
+  margin-bottom: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.headerSubtitle {
+  font-size: var(--fs-base);
+  color: var(--color-text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.gallerySection {
+  padding-top: var(--sp-12);
+  padding-bottom: var(--sp-16);
+}
+
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  grid-auto-rows: 10px;
+  gap: 0;
+  margin: 0 auto;
+}
+
+.tile {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  grid-column: span 4;
+  grid-row: span 36;
+}
+
+.tileTall {
+  grid-row: span 56;
+}
+
+.tileWide {
+  grid-column: span 8;
+  grid-row: span 36;
+}
+
+.tileBig {
+  grid-column: span 8;
+  grid-row: span 72;
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.tile:hover .img {
+  transform: scale(1.05);
+}
+
+.downloadButton {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-secondary-dark);
+  color: var(--color-white);
+  opacity: 0.92;
+  text-decoration: none;
+}
+
+.downloadButton:hover {
+  opacity: 1;
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Legacy (kept for fallback) ──────────────────────────── */
+.tileCaption {
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tileCategory {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  padding: 2px var(--sp-2);
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .galleryGrid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .tile {
+    grid-column: span 3;
+    grid-row: span 34;
+  }
+
+  .tileWide,
+  .tileBig {
+    grid-column: span 6;
+  }
+
+  .gallerySection {
+    padding-top: var(--sp-6);
+    padding-bottom: var(--sp-10);
+  }
+}
+
+@media (max-width: 560px) {
+  .galleryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tile,
+  .tileWide,
+  .tileBig {
+    grid-column: span 2;
+  }
+
+  .sinhalaTitle {
+    font-size: 2rem;
+  }
+}
