@@ -39,6 +39,11 @@
   height: 72px;
 }
 
+.salalihiniLogo {
+  width: 200px;
+  height: 52px;
+}
+
 .brandTitle {
   font-family: var(--font-heading);
   font-size: var(--fs-xl);

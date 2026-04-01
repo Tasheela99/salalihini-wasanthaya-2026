@@ -35,7 +35,7 @@ const slides = [
 
 const INTERVAL = 5500;
 // Set target date for the countdown
-const TARGET_DATE = new Date("April 13, 2026 00:00:00").getTime();
+const TARGET_DATE = new Date(2026, 3, 2, 9, 0, 0).getTime();
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Browse photos and videos from past Salalihini Wasanthaya events.",
 };
 
-const images = Array.from({ length: 44 }, (_, index) => {
+const images = Array.from({ length: 43 }, (_, index) => {
   const number = String(index + 1).padStart(2, "0");
   return {
     id: number,

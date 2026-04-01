@@ -1,8 +1,7 @@
 import {
-    faClock,
-    faEnvelope,
-    faLocationDot,
-    faPhone,
+  faEnvelope,
+  faLocationDot,
+  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { Metadata } from "next";
@@ -19,30 +18,17 @@ const contactCards = [
   {
     icon: faLocationDot,
     title: "Visit Us",
-    lines: [
-      "Salalihini Wasanthaya Office",
-      "No. 45, Lotus Road",
-      "Colombo 01, Sri Lanka",
-    ],
+    lines: ["Gregory Park", "Nuwaraeliya"],
   },
   {
     icon: faPhone,
     title: "Call Us",
-    lines: ["+94 11 234 5678", "+94 77 123 4567"],
+    lines: ["0112587352"],
   },
   {
     icon: faEnvelope,
     title: "Email Us",
     lines: ["info@salalihini.lk", "tickets@salalihini.lk"],
-  },
-  {
-    icon: faClock,
-    title: "Office Hours",
-    lines: [
-      "Mon – Fri: 9:00 AM – 5:00 PM",
-      "Sat: 9:00 AM – 1:00 PM",
-      "Sun: Closed",
-    ],
   },
 ];
 

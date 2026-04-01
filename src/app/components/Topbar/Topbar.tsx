@@ -15,7 +15,7 @@ export default function Topbar() {
         {/* Left – contact info */}
         <div className={styles.left}>
           <span>
-            <FontAwesomeIcon icon={faPhone} /> +94 11 234 5678
+            <FontAwesomeIcon icon={faPhone} /> 0112587352
           </span>
           <span>
             <FontAwesomeIcon icon={faEnvelope} /> info@salalihini.lk

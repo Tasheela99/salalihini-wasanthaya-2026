@@ -1,13 +1,13 @@
 import {
-    faFacebook,
-    faInstagram,
-    faYoutube,
+  faFacebook,
+  faInstagram,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import {
-    faEnvelope,
-    faGlobe,
-    faLocationDot,
-    faPhone,
+  faEnvelope,
+  faGlobe,
+  faLocationDot,
+  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -42,6 +42,11 @@ export default function Footer() {
               alt="Festival Logo"
               className={`${styles.brandLogo} ${styles.festivalLogo}`}
             />
+            <img
+              src="/images/salalihini_wasanthaya_logo.png"
+              alt="Salalihini Wasanthaya Logo"
+              className={`${styles.brandLogo} ${styles.salalihiniLogo}`}
+            />
           </div>
           <h3 className={styles.brandTitle}>සැළලිහිණි  වසන්තය</h3>
           <p className={styles.brandSub}>Salalihini Wasanthaya 2026</p>
@@ -72,7 +77,7 @@ export default function Footer() {
               <FontAwesomeIcon icon={faLocationDot} /> Colombo, Sri Lanka
             </li>
             <li>
-              <FontAwesomeIcon icon={faPhone} /> +94 11 234 5678
+              <FontAwesomeIcon icon={faPhone} /> 0112587352
             </li>
             <li>
               <FontAwesomeIcon icon={faEnvelope} /> info@salalihini.lk
@@ -101,7 +106,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.bottom}>
-        <p>© {year} Salalihini Wasanthaya - All rights reserved. Powered by President Media Division</p>
+        <p>© {year} Salalihini Wasanthaya - All rights reserved. Powered by President's Media Division</p>
       </div>
     </footer>
   );

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SectionLabel from "../components/SectionLabel/SectionLabel";
 import styles from "./attractions.module.css";
 import TourismGuideSection, {
-    type TourismGuidePlace,
+  type TourismGuidePlace,
 } from "./TourismGuideSection";
 
 export const metadata: Metadata = {
@@ -16,7 +16,6 @@ const attractions = [
     id: 1,
     image:
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-    icon: "\uD83D\uDDBC\uFE0F",
     title: "Scenic Nature",
     sinhala: "සොබාදහම",
     description:
@@ -27,7 +26,6 @@ const attractions = [
     id: 2,
     image:
       "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
-    icon: "\uD83D\uDC83",
     title: "Cultural Performances",
     sinhala: "සාම්ප්‍රදායික ප්‍රදර්ශන",
     description:
@@ -38,7 +36,6 @@ const attractions = [
     id: 3,
     image:
       "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
-    icon: "\uD83C\uDF72",
     title: "Sri Lankan Cuisine",
     sinhala: "ශ්‍රී ලංකා ආහාරය",
     description:
@@ -58,7 +55,6 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     destinationQuery: "Lover's Leap Waterfall, Nuwara Eliya",
     chips: [
       { icon: "road", text: "~5 km", tone: "green" },
-      { icon: "clock", text: "~15 min", tone: "blue" },
       { icon: "walk", text: "1–2 hrs", tone: "pink" },
     ],
   },
@@ -72,7 +68,6 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     destinationQuery: "Hakgala Botanical Garden",
     chips: [
       { icon: "road", text: "~10 km", tone: "green" },
-      { icon: "clock", text: "~20 min", tone: "blue" },
       { icon: "camera", text: "2–3 hrs", tone: "pink" },
     ],
   },
@@ -86,7 +81,6 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     destinationQuery: "Seetha Amman Kovil",
     chips: [
       { icon: "road", text: "~12 km", tone: "green" },
-      { icon: "clock", text: "~25 min", tone: "blue" },
       { icon: "landmark", text: "~1 hr", tone: "pink" },
     ],
   },
@@ -100,7 +94,6 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     destinationQuery: "Moon Plains, Nuwara Eliya",
     chips: [
       { icon: "road", text: "~10 km", tone: "green" },
-      { icon: "clock", text: "~25 min", tone: "blue" },
       { icon: "camera", text: "1–2 hrs", tone: "pink" },
     ],
   },
@@ -114,7 +107,6 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     destinationQuery: "Ambewela Farm",
     chips: [
       { icon: "road", text: "~22 km", tone: "green" },
-      { icon: "clock", text: "~45 min", tone: "blue" },
       { icon: "camera", text: "1–2 hrs", tone: "pink" },
     ],
   },
@@ -128,7 +120,6 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     destinationQuery: "Galway's Land National Park, Nuwara Eliya",
     chips: [
       { icon: "road", text: "~2 km", tone: "green" },
-      { icon: "clock", text: "~8 min", tone: "blue" },
       { icon: "walk", text: "45–90 min", tone: "pink" },
     ],
   },
@@ -143,7 +134,6 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     destinationQuery: "Horton Plains National Park",
     chips: [
       { icon: "road", text: "~32 km", tone: "green" },
-      { icon: "clock", text: "~1 hr", tone: "blue" },
       { icon: "hike", text: "3–4 hrs", tone: "pink" },
     ],
   },
@@ -157,7 +147,6 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     destinationQuery: "Gregory Lake, Nuwara Eliya",
     chips: [
       { icon: "road", text: "~1.5 km", tone: "green" },
-      { icon: "clock", text: "~5 min", tone: "blue" },
       { icon: "walk", text: "1–2 hrs", tone: "pink" },
     ],
   },
@@ -171,7 +160,6 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     destinationQuery: "Pedro Tea Estate",
     chips: [
       { icon: "road", text: "~3.5 km", tone: "green" },
-      { icon: "clock", text: "~10 min", tone: "blue" },
       { icon: "tea", text: "1–2 hrs", tone: "pink" },
     ],
   },
@@ -185,7 +173,6 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     destinationQuery: "Victoria Park, Nuwara Eliya",
     chips: [
       { icon: "road", text: "~1 km", tone: "green" },
-      { icon: "clock", text: "~4 min", tone: "blue" },
       { icon: "walk", text: "45–90 min", tone: "pink" },
     ],
   },
@@ -207,9 +194,6 @@ export default function AttractionsPage() {
                     className={styles.cardImage}
                     loading="lazy"
                   />
-                  <div className={styles.cardBadge} aria-hidden>
-                    <span className={styles.cardBadgeIcon}>{a.icon}</span>
-                  </div>
                 </div>
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>{a.title}</h3>

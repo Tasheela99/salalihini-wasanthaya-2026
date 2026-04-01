@@ -3,7 +3,7 @@ import { Fragment, useEffect, useState } from "react";
 import SectionLabel from "../SectionLabel/SectionLabel";
 import styles from "./CallToAction.module.css";
 
-const TARGET_DATE = new Date("April 13, 2026 00:00:00").getTime();
+const TARGET_DATE = new Date(2026, 3, 2, 9, 0, 0).getTime();
 
 export default function CallToAction() {
   const [timeLeft, setTimeLeft] = useState({

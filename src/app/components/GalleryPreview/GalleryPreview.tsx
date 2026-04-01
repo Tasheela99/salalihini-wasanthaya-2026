@@ -3,14 +3,13 @@ import Link from "next/link";
 import SectionLabel from "../SectionLabel/SectionLabel";
 import styles from "./GalleryPreview.module.css";
 
-const images = Array.from({ length: 5 }, (_, index) => {
-  const number = String(index + 1).padStart(2, "0");
-  return {
-    id: number,
-    src: `/images/${number}.jpeg`,
-    alt: `Gallery image ${number}`,
-  };
-});
+const SELECTED_IMAGE_IDS = ["03", "08", "19", "24", "33", "32"] as const;
+
+const images = SELECTED_IMAGE_IDS.map((id) => ({
+  id,
+  src: `/images/${id}.jpeg`,
+  alt: `Gallery image ${id}`,
+}));
 
 function getTileVariantClass(index: number) {
   if (index % 7 === 0) return styles.tileBig;

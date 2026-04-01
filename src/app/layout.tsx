@@ -3,7 +3,6 @@ import { Roboto } from "next/font/google";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import SunAnimation from "./components/SunAnimation";
 import Topbar from "./components/Topbar";
 import "./globals.css";
 
@@ -36,7 +35,6 @@ export default function RootLayout({
       <body className={roboto.className}>
         <Topbar />
         <Header />
-        <SunAnimation />
         <main className="page-content">
           <Banner
             className="container"
