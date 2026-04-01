@@ -103,11 +103,3 @@ jobs:
             --delete \
             --cache-control "public, max-age=86400"
 
-      # Purge Cloudflare cache after deploy
-      - name: Purge Cloudflare cache
-        if: ${{ secrets.CLOUDFLARE_ZONE_ID != '' }}
-        run: |
-          curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
-            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            --data '{"purge_everything":true}'
