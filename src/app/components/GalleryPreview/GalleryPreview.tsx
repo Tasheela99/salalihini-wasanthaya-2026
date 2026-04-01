@@ -3,7 +3,7 @@ import Link from "next/link";
 import SectionLabel from "../SectionLabel/SectionLabel";
 import styles from "./GalleryPreview.module.css";
 
-const SELECTED_IMAGE_IDS = ["03", "08", "19", "24", "33", "32"] as const;
+const SELECTED_IMAGE_IDS = ["01", "08", "19", "24", "33", "32"] as const;
 
 const images = SELECTED_IMAGE_IDS.map((id) => ({
   id,
