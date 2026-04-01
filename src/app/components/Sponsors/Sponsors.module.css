@@ -1,0 +1,100 @@
+.sponsors {
+  background-color: var(--color-bg-page);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-6);
+  align-items: stretch;
+}
+
+.logoCard {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 210px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-card);
+  transition: border-color 0.2s, transform 0.18s;
+}
+
+.logoCard:hover {
+  border-color: var(--color-glass-border);
+  background:
+    radial-gradient(
+      140px 140px at 18% 22%,
+      var(--color-glass-highlight) 0%,
+      transparent 62%
+    ),
+    linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary-dark) 100%);
+  transform: translateY(-4px);
+}
+
+.media {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding: var(--sp-6);
+  background-color: transparent;
+}
+
+.hoverName {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--sp-6);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.name {
+  display: block;
+  color: var(--color-text-primary);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.logoCard:hover .name {
+  color: var(--color-text-on-dark);
+}
+
+.logoCard:hover .hoverName {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .logoCard {
+    height: 200px;
+  }
+}
+
+@media (max-width: 420px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logoCard {
+    height: 190px;
+  }
+}

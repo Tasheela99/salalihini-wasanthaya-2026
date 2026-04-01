@@ -1,12 +1,12 @@
 "use client";
 
 import {
-  faCalendarDays,
-  faEnvelope,
-  faHome,
-  faImages,
-  faInfoCircle,
-  faStar
+    faCalendarDays,
+    faEnvelope,
+    faHome,
+    faImages,
+    faInfoCircle,
+    faStar
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -44,16 +44,22 @@ export default function Header() {
       <div className={`container ${styles.inner}`}>
         {/* Logo / Brand */}
         <Link href="/" className={styles.brand}>
-          <Image
-            src="/images/logo.png"
-            alt="Salalihini Wasanthaya Logo"
-            width={100}
-            height={70}
-            className={styles.brandLogo}
-          />
-          <div className={styles.brandText}>
-            <span className={styles.brandTitle}>සැළලිහිණි  වසන්තය</span>
-          </div>
+          <span className={styles.brandLogos} aria-hidden>
+            <Image
+              src="/images/logo.png"
+              alt="Rupavahini Logo"
+              width={100}
+              height={70}
+              className={`${styles.brandLogo} ${styles.rupavahiniLogo}`}
+            />
+            <Image
+              src="/images/festival-logo.png"
+              alt="Festival Logo"
+              width={72}
+              height={72}
+              className={`${styles.brandLogo} ${styles.festivalLogo}`}
+            />
+          </span>
         </Link>
 
         {/* Right side: Navigation */}

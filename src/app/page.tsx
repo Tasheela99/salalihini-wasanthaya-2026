@@ -5,9 +5,7 @@ import CallToAction from "./components/CallToAction";
 import Features from "./components/Features";
 import GalleryPreview from "./components/GalleryPreview";
 import Hero from "./components/Hero";
-import ImageBanner from "./components/ImageBanner";
-import NewsSection from "./components/NewsSection";
-import RecentProjects from "./components/RecentProjects";
+import Sponsors from "./components/Sponsors";
 
 export const metadata: Metadata = {
   title: "Home | Salalihini Wasanthaya 2026",
@@ -29,11 +27,7 @@ export default function HomePage() {
 
       <CallToAction />
 
-      <RecentProjects />
-
-      <ImageBanner />
-
-      <NewsSection />
+      <Sponsors />
     </>
   );
 }

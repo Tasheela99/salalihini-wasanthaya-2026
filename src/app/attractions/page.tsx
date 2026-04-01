@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SectionLabel from "../components/SectionLabel/SectionLabel";
 import styles from "./attractions.module.css";
 import TourismGuideSection, {
-  type TourismGuidePlace,
+    type TourismGuidePlace,
 } from "./TourismGuideSection";
 
 export const metadata: Metadata = {
@@ -49,16 +49,100 @@ const attractions = [
 
 const tourismGuidePlaces: TourismGuidePlace[] = [
   {
-    id: "horton-plains",
-    title: "Horton Plains & World’s End",
+    id: "lovers-leap",
+    title: "Lover's Leap",
+    sinhala: "ලවර්ස් ලීප්",
+    description:
+      "A beautiful waterfall viewpoint surrounded by tea plantations and misty hills.",
+    imageSrc: "/images/05.jpeg",
+    destinationQuery: "Lover's Leap Waterfall, Nuwara Eliya",
+    chips: [
+      { icon: "road", text: "~5 km", tone: "green" },
+      { icon: "clock", text: "~15 min", tone: "blue" },
+      { icon: "walk", text: "1–2 hrs", tone: "pink" },
+    ],
+  },
+  {
+    id: "hakgala-botanical-garden",
+    title: "Hakgala Botanical Garden",
+    sinhala: "හක්ගල උද්‍යානය",
+    description:
+      "A must-see garden famous for roses, orchids, and cool-climate flora.",
+    imageSrc: "/images/03.jpeg",
+    destinationQuery: "Hakgala Botanical Garden",
+    chips: [
+      { icon: "road", text: "~10 km", tone: "green" },
+      { icon: "clock", text: "~20 min", tone: "blue" },
+      { icon: "camera", text: "2–3 hrs", tone: "pink" },
+    ],
+  },
+  {
+    id: "seetha-amman-kovil",
+    title: "Seetha Amman Kovil",
+    sinhala: "සීතා අම්මාන් කෝවිල",
+    description:
+      "A well-known Hindu temple linked to the Ramayana, set in a scenic gorge.",
+    imageSrc: "/images/04.jpeg",
+    destinationQuery: "Seetha Amman Kovil",
+    chips: [
+      { icon: "road", text: "~12 km", tone: "green" },
+      { icon: "clock", text: "~25 min", tone: "blue" },
+      { icon: "landmark", text: "~1 hr", tone: "pink" },
+    ],
+  },
+  {
+    id: "moon-plains",
+    title: "Moon Plains",
+    sinhala: "මූන් ප්ලේන්ස්",
+    description:
+      "A high-altitude viewpoint with wide open landscapes and stunning sunrise views.",
+    imageSrc: "/images/09.jpeg",
+    destinationQuery: "Moon Plains, Nuwara Eliya",
+    chips: [
+      { icon: "road", text: "~10 km", tone: "green" },
+      { icon: "clock", text: "~25 min", tone: "blue" },
+      { icon: "camera", text: "1–2 hrs", tone: "pink" },
+    ],
+  },
+  {
+    id: "ambewela-farm",
+    title: "Ambewela Farm",
+    sinhala: "අම්බෙවෙල ගොවිපල",
+    description:
+      "Visit the famous dairy farm area and enjoy the fresh mountain air and scenery.",
+    imageSrc: "/images/10.jpeg",
+    destinationQuery: "Ambewela Farm",
+    chips: [
+      { icon: "road", text: "~22 km", tone: "green" },
+      { icon: "clock", text: "~45 min", tone: "blue" },
+      { icon: "camera", text: "1–2 hrs", tone: "pink" },
+    ],
+  },
+  {
+    id: "galways-land-national-park",
+    title: "Galway's Land National Park",
+    sinhala: "ගැල්වේස් ලෑන්ඩ් ජාතික උද්‍යානය",
+    description:
+      "A compact urban national park ideal for a short nature walk and birdwatching.",
+    imageSrc: "/images/11.jpeg",
+    destinationQuery: "Galway's Land National Park, Nuwara Eliya",
+    chips: [
+      { icon: "road", text: "~2 km", tone: "green" },
+      { icon: "clock", text: "~8 min", tone: "blue" },
+      { icon: "walk", text: "45–90 min", tone: "pink" },
+    ],
+  },
+  {
+    id: "horton-plains-national-park",
+    title: "Horton Plains National Park",
     sinhala: "හෝර්ටන් තැන්න",
     description:
-      "Breathtaking cliff edge with panoramic views. Best visited early morning before mist rolls in.",
+      "Home to World's End and beautiful cloud-forest trails. Best visited early morning.",
     mustVisit: true,
     imageSrc: "/images/01.jpeg",
     destinationQuery: "Horton Plains National Park",
     chips: [
-      { icon: "road", text: "32 km", tone: "green" },
+      { icon: "road", text: "~32 km", tone: "green" },
       { icon: "clock", text: "~1 hr", tone: "blue" },
       { icon: "hike", text: "3–4 hrs", tone: "pink" },
     ],
@@ -68,98 +152,41 @@ const tourismGuidePlaces: TourismGuidePlace[] = [
     title: "Gregory Lake",
     sinhala: "ග්‍රෙගරි වැව",
     description:
-      "Scenic lake in the heart of the city. Enjoy boating, pony rides, and lakeside walks.",
+      "A scenic lake in the heart of the city—great for boating and lakeside walks.",
     imageSrc: "/images/02.jpeg",
     destinationQuery: "Gregory Lake, Nuwara Eliya",
     chips: [
-      { icon: "road", text: "1.5 km", tone: "green" },
+      { icon: "road", text: "~1.5 km", tone: "green" },
       { icon: "clock", text: "~5 min", tone: "blue" },
       { icon: "walk", text: "1–2 hrs", tone: "pink" },
     ],
   },
   {
-    id: "hakgala",
-    title: "Hakgala Botanical Garden",
-    sinhala: "හක්ගල උද්‍යානය",
-    description:
-      "One of Sri Lanka’s finest botanical gardens, famous for roses and orchids.",
-    imageSrc: "/images/03.jpeg",
-    destinationQuery: "Hakgala Botanical Garden",
-    chips: [
-      { icon: "road", text: "10 km", tone: "green" },
-      { icon: "clock", text: "~20 min", tone: "blue" },
-      { icon: "camera", text: "2–3 hrs", tone: "pink" },
-    ],
-  },
-  {
-    id: "seetha-amman",
-    title: "Seetha Amman Temple",
-    sinhala: "සීතා අම්මාන් කෝවිල",
-    description:
-      "Ancient Hindu temple linked to the Ramayana epic, set in a scenic gorge.",
-    imageSrc: "/images/04.jpeg",
-    destinationQuery: "Seetha Amman Temple",
-    chips: [
-      { icon: "road", text: "12 km", tone: "green" },
-      { icon: "clock", text: "~25 min", tone: "blue" },
-      { icon: "landmark", text: "1 hr", tone: "pink" },
-    ],
-  },
-  {
-    id: "lovers-leap",
-    title: "Lover’s Leap Waterfall",
-    sinhala: "ලවර්ස් ලීප්",
-    description:
-      "A stunning 30m waterfall surrounded by tea plantations and misty hills.",
-    imageSrc: "/images/05.jpeg",
-    destinationQuery: "Lover's Leap Waterfall, Nuwara Eliya",
-    chips: [
-      { icon: "road", text: "5 km", tone: "green" },
-      { icon: "clock", text: "~15 min", tone: "blue" },
-      { icon: "walk", text: "1–2 hrs", tone: "pink" },
-    ],
-  },
-  {
-    id: "pedro-tea",
+    id: "pedro-tea-estate",
     title: "Pedro Tea Estate",
     sinhala: "පෙඩ්රෝ තේ වත්ත",
     description:
-      "Tour a working tea factory, taste fresh Ceylon tea, and enjoy stunning estate views.",
+      "Tour a working tea factory, taste fresh Ceylon tea, and enjoy estate views.",
     imageSrc: "/images/06.jpeg",
     destinationQuery: "Pedro Tea Estate",
     chips: [
-      { icon: "road", text: "3.5 km", tone: "green" },
+      { icon: "road", text: "~3.5 km", tone: "green" },
       { icon: "clock", text: "~10 min", tone: "blue" },
       { icon: "tea", text: "1–2 hrs", tone: "pink" },
     ],
   },
   {
-    id: "pidurutalagala",
-    title: "Pidurutalagala (Mt. Pedro)",
-    sinhala: "පිදුරුතලගල",
+    id: "victoria-park",
+    title: "Victoria Park",
+    sinhala: "වික්ටෝරියා උද්‍යානය",
     description:
-      "Sri Lanka’s highest peak at 2,524m. Views accessible from the approach road.",
-    mustVisit: true,
-    imageSrc: "/images/07.jpeg",
-    destinationQuery: "Pidurutalagala",
+      "A peaceful city park with flower gardens—perfect for a relaxed stroll.",
+    imageSrc: "/images/12.jpeg",
+    destinationQuery: "Victoria Park, Nuwara Eliya",
     chips: [
-      { icon: "road", text: "8 km", tone: "green" },
-      { icon: "clock", text: "~20 min", tone: "blue" },
-      { icon: "mountain", text: "2 hrs", tone: "pink" },
-    ],
-  },
-  {
-    id: "ramboda",
-    title: "Ramboda Falls",
-    sinhala: "රම්බොඩ දිය ඇල්ල",
-    description:
-      "Magnificent 109m waterfall cascading through lush greenery along the Kandy road.",
-    imageSrc: "/images/08.jpeg",
-    destinationQuery: "Ramboda Falls",
-    chips: [
-      { icon: "road", text: "28 km", tone: "green" },
-      { icon: "clock", text: "~45 min", tone: "blue" },
-      { icon: "camera", text: "1–2 hrs", tone: "pink" },
+      { icon: "road", text: "~1 km", tone: "green" },
+      { icon: "clock", text: "~4 min", tone: "blue" },
+      { icon: "walk", text: "45–90 min", tone: "pink" },
     ],
   },
 ];

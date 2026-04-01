@@ -1,12 +1,13 @@
 import {
-  faFacebook,
-  faInstagram,
-  faYoutube,
+    faFacebook,
+    faInstagram,
+    faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import {
-  faEnvelope,
-  faLocationDot,
-  faPhone,
+    faEnvelope,
+    faGlobe,
+    faLocationDot,
+    faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -30,7 +31,18 @@ export default function Footer() {
       <div className={`container ${styles.grid}`}>
         {/* Brand */}
         <div className={styles.brand}>
-          <img src="/images/logo.png" alt="Salalihini Wasanthaya Logo" className={styles.brandLogo} style={{ maxWidth: '80px', height: 'auto' }} />
+          <div className={styles.brandLogos} aria-hidden>
+            <img
+              src="/images/logo.png"
+              alt="Rupavahini Logo"
+              className={`${styles.brandLogo} ${styles.rupavahiniLogo}`}
+            />
+            <img
+              src="/images/festival-logo.png"
+              alt="Festival Logo"
+              className={`${styles.brandLogo} ${styles.festivalLogo}`}
+            />
+          </div>
           <h3 className={styles.brandTitle}>සැළලිහිණි  වසන්තය</h3>
           <p className={styles.brandSub}>Salalihini Wasanthaya 2026</p>
           <p className={styles.brandDesc}>
@@ -72,14 +84,17 @@ export default function Footer() {
         <div className={styles.col}>
           <h4 className={styles.colTitle}>Follow Us</h4>
           <div className={styles.socials}>
-            <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
+            <Link href="https://www.facebook.com/srilankarupavahini/" target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
               <FontAwesomeIcon icon={faFacebook} /> Facebook
             </Link>
-            <Link href="https://youtube.com" target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
+            <Link href="https://www.youtube.com/channel/UCT83ymyAGm7Gnk_4ifxjxIA" target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
               <FontAwesomeIcon icon={faYoutube} /> YouTube
             </Link>
-            <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
+            <Link href="https://www.instagram.com/rupavahini.lk/" target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
               <FontAwesomeIcon icon={faInstagram} /> Instagram
+            </Link>
+            <Link href="https://rupavahini.lk/" target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
+              <FontAwesomeIcon icon={faGlobe} /> Website
             </Link>
           </div>
         </div>

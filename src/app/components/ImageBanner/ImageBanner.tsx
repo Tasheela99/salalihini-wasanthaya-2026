@@ -1,11 +1,11 @@
-import styles from "./ImageBanner.module.css";
+import Banner from "../Banner";
 
 export default function ImageBanner() {
   return (
-    <section className={styles.imageBanner}>
-      <div className="container">
-        {/* Add your content here */}
-      </div>
-    </section>
+    <Banner
+      backgroundImageSrc="/images/bg-image-01.png"
+      title="Salalihini Wasanthaya 2026"
+      message="Stay connected for the latest announcements, schedule updates, and event highlights."
+    />
   );
 }

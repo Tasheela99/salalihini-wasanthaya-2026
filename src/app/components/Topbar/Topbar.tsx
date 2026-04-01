@@ -3,7 +3,7 @@ import {
     faInstagram,
     faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faGlobe, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import styles from "./Topbar.module.css";
@@ -25,7 +25,7 @@ export default function Topbar() {
         {/* Right – social links */}
         <div className={styles.right}>
           <Link
-            href="https://facebook.com"
+            href="https://www.facebook.com/srilankarupavahini/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -34,7 +34,7 @@ export default function Topbar() {
             <FontAwesomeIcon icon={faFacebook} /> Facebook
           </Link>
           <Link
-            href="https://youtube.com"
+            href="https://www.youtube.com/channel/UCT83ymyAGm7Gnk_4ifxjxIA"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
@@ -43,13 +43,22 @@ export default function Topbar() {
             <FontAwesomeIcon icon={faYoutube} /> YouTube
           </Link>
           <Link
-            href="https://instagram.com"
+            href="https://www.instagram.com/rupavahini.lk/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
             className={styles.socialLink}
           >
             <FontAwesomeIcon icon={faInstagram} /> Instagram
+          </Link>
+          <Link
+            href="https://rupavahini.lk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Website"
+            className={styles.socialLink}
+          >
+            <FontAwesomeIcon icon={faGlobe} /> Website
           </Link>
         </div>
       </div>

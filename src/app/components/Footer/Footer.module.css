@@ -18,6 +18,27 @@
   gap: var(--sp-2);
 }
 
+.brandLogos {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.brandLogo {
+  display: block;
+  object-fit: contain;
+}
+
+.rupavahiniLogo {
+  width: 90px;
+  height: 64px;
+}
+
+.festivalLogo {
+  width: 72px;
+  height: 72px;
+}
+
 .brandTitle {
   font-family: var(--font-heading);
   font-size: var(--fs-xl);

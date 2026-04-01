@@ -5,27 +5,27 @@ import styles from "./AttractionsPreview.module.css";
 const attractions = [
   {
     id: 1,
-    image: "/images/28.jpeg",
-    title: "Scenic Nature",
-    sinhala: "සොබාදහම",
+    image: "/images/05.jpeg",
+    title: "Lover's Leap",
+    sinhala: "ලවර්ස් ලීප්",
     description:
-      "Explore the misty mountains, lush tea estates, and world-famous botanical gardens of Nuwara Eliya.",
+      "A beautiful waterfall viewpoint surrounded by tea plantations and misty hills.",
   },
   {
     id: 2,
-    image: "/images/34.jpeg",
-    title: "Cultural Performances",
-    sinhala: "සාම්ප්‍රදායික ප්‍රදර්ශන",
+    image: "/images/01.jpeg",
+    title: "Horton Plains National Park",
+    sinhala: "හෝර්ටන් තැන්න",
     description:
-      "Experience traditional Kandyan dance, drum performances, and vibrant cultural pageants.",
+      "Home to World's End and beautiful cloud-forest trails. Best visited early morning.",
   },
   {
     id: 3,
-    image: "/images/37.jpeg",
-    title: "Sri Lankan Cuisine",
-    sinhala: "ශ්‍රී ලංකා ආහාරය",
+    image: "/images/03.jpeg",
+    title: "Hakgala Botanical Garden",
+    sinhala: "හක්ගල උද්‍යානය",
     description:
-      "Taste authentic rice & curry, hoppers, kottu roti, and sweet treats from local food artisans.",
+      "A must-see garden famous for roses, orchids, and cool-climate flora.",
   },
 ];
 

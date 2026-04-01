@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import SunAnimation from "./components/SunAnimation";
@@ -36,7 +37,16 @@ export default function RootLayout({
         <Topbar />
         <Header />
         <SunAnimation />
-        <main className="page-content">{children}</main>
+        <main className="page-content">
+          <Banner
+            className="container"
+            title="Salalihini Wasanthaya 2026"
+            message="Stay connected for the latest announcements, schedule updates, and event highlights."
+            videoSrc="/videos/video.mp4"
+            videoButtonLabel="Watch Video"
+          />
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
