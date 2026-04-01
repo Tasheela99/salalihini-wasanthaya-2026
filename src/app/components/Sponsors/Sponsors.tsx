@@ -21,11 +21,13 @@ export default function Sponsors() {
         <div className={styles.grid}>
           {sponsors.map((sponsor) => (
             <div key={sponsor.src} className={styles.logoCard}>
-              <div
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={sponsor.src}
+                alt={sponsor.alt}
                 className={styles.media}
-                role="img"
-                aria-label={sponsor.alt}
-                style={{ backgroundImage: `url("${encodeURI(sponsor.src)}")` }}
+                loading="lazy"
+                draggable={false}
               />
               <div className={styles.hoverName} aria-hidden>
                 <span className={styles.name}>{sponsor.alt}</span>

@@ -101,7 +101,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.bottom}>
-        <p>© {year} Salalihini Wasanthaya. All rights reserved.</p>
+        <p>© {year} Salalihini Wasanthaya - All rights reserved. Powered by President Media Division</p>
       </div>
     </footer>
   );

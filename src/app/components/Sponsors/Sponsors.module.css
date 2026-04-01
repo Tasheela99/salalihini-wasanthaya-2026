@@ -13,66 +13,70 @@
   position: relative;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  height: 210px;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
-  background-color: var(--color-bg-card);
-  transition: border-color 0.2s, transform 0.18s;
+  background-color: #ffffff;
+  padding: var(--sp-6) var(--sp-8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  cursor: default;
 }
 
 .logoCard:hover {
   border-color: var(--color-glass-border);
-  background:
-    radial-gradient(
-      140px 140px at 18% 22%,
-      var(--color-glass-highlight) 0%,
-      transparent 62%
-    ),
-    linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary-dark) 100%);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* ── Logo image ──────────────────────────────────── */
 .media {
-  position: relative;
   width: 100%;
-  flex: 1;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  padding: var(--sp-6);
-  background-color: transparent;
+  height: 100%;
+  object-fit: contain;
+  filter: saturate(0.9);
+  transition: filter 0.25s, transform 0.25s;
 }
 
+.logoCard:hover .media {
+  filter: saturate(1);
+  transform: scale(1.06);
+}
+
+/* ── Hover overlay with name ─────────────────────── */
 .hoverName {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  text-align: center;
-  padding: var(--sp-6);
+  padding: var(--sp-3);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55) 0%,
+    transparent 60%
+  );
   opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.name {
-  display: block;
-  color: var(--color-text-primary);
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.logoCard:hover .name {
-  color: var(--color-text-on-dark);
+  transition: opacity 0.25s;
 }
 
 .logoCard:hover .hoverName {
   opacity: 1;
 }
 
+.name {
+  display: block;
+  color: #fff;
+  font-size: var(--fs-xs, 0.75rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Responsive ──────────────────────────────────── */
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
@@ -83,18 +87,10 @@
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .logoCard {
-    height: 200px;
-  }
 }
 
 @media (max-width: 420px) {
   .grid {
     grid-template-columns: 1fr;
-  }
-
-  .logoCard {
-    height: 190px;
   }
 }

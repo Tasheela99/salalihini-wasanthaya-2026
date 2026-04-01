@@ -1,3 +1,5 @@
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { Metadata } from "next";
 import SectionLabel from "../components/SectionLabel/SectionLabel";
 import styles from "./schedule.module.css";
@@ -111,7 +113,7 @@ export default function SchedulePage() {
                         </span>
                       </div>
                       <h3 className={styles.eventTitle}>{evt.title}</h3>
-                      <p className={styles.eventLocation}>📍 {evt.location}</p>
+                      <p className={styles.eventLocation}><FontAwesomeIcon icon={faLocationDot} /> {evt.location}</p>
                     </div>
                   </div>
                 ))}

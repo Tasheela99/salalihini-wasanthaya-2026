@@ -117,13 +117,18 @@
 }
 
 .socialBtn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
   font-size: var(--fs-sm);
+  font-weight: 600;
   color: var(--color-bg-footer);
   background-color: var(--color-primary);
-  padding: var(--sp-1) var(--sp-4);
+  padding: var(--sp-2) var(--sp-6);
   border-radius: var(--radius-full);
-  width: fit-content;
+  width: 100%;
+  max-width: 200px;
   transition: background-color 0.2s, transform 0.15s;
 }
 
@@ -148,6 +153,7 @@
   .grid {
     grid-template-columns: 1fr 1fr;
   }
+
   .brand {
     grid-column: 1 / -1;
   }
