@@ -12,6 +12,7 @@ export default function CallToAction() {
     minutes: 0,
     seconds: 0,
   });
+  const [isExpired, setIsExpired] = useState(false);
 
   useEffect(() => {
     const countdownTimer = setInterval(() => {
@@ -28,6 +29,7 @@ export default function CallToAction() {
           seconds: Math.floor((difference % (1000 * 60)) / 1000),
         });
       } else {
+        setIsExpired(true);
         clearInterval(countdownTimer);
       }
     }, 1000);
@@ -40,6 +42,8 @@ export default function CallToAction() {
     { label: "Minutes", value: timeLeft.minutes },
     { label: "Seconds", value: timeLeft.seconds },
   ];
+
+  if (isExpired) return null;
 
   return (
     <>
